@@ -16,6 +16,8 @@
 
         $row = mysqli_fetch_array($result);
         if($row['Username'] == $username && $row['Password'] == $password){
+            $name = mysqli_query($con,"SELECT firstname,lastname,userid FROM memberinfo WHERE Username = '$username'");
+            $namee = mysqli_fetch_array($name);
             echo "Login success <br> Welcome ".$row['Username'];
             
         }else{
@@ -54,15 +56,15 @@
     </style> -->
     
     <form action="booking_form.php" method="POST">
-            <input type="hidden" name="u_firstname" value=<?php echo $row['firstname'];?>>
-            <input type="hidden" name="u_lastname" value=<?php echo $row['lastname'];?>>
-            <input type="hidden" name="u_id" value=<?php echo $row['userid'];?>>
+            <input type="hidden" name="u_firstname" value=<?php echo $namee['firstname'];?>>
+            <input type="hidden" name="u_lastname" value=<?php echo $namee['lastname'];?>>
+            <input type="hidden" name="u_id" value=<?php echo $namee['userid'];?>>
             <input type="submit" value="Booking">
     </form>
     <form action="review_form.php" method="POST">
-            <input type="hidden" name="u_firstname" value=<?php echo $row['firstname'];?>>
-            <input type="hidden" name="u_lastname" value=<?php echo $row['lastname'];?>>
-            <input type="hidden" name="u_id" value=<?php echo $row['userid'];?>>
+            <input type="hidden" name="u_firstname" value=<?php echo $namee['firstname'];?>>
+            <input type="hidden" name="u_lastname" value=<?php echo $namee['lastname'];?>>
+            <input type="hidden" name="u_id" value=<?php echo $namee['userid'];?>>
             <input type="submit" value="Review">
     </form>
         
