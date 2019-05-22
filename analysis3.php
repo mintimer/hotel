@@ -16,24 +16,28 @@
 <body>
 <div class="container">
     <h3>Hotel Infomation</h3>
-
+    <br>
     <form action="#" method="get">
         <select name="branch" class="form-control">
-            <option selected>Choose Hotel</option>
+            <option selected value="">Choose Hotel</option>
             <?php
-                $sql = "SELECT branchname,branchno FROM branchinfo";
-                $result = mysqli_query($con,$sql);
-                while($row=mysqli_fetch_array($result)){
+                    $sql = "SELECT branchname,branchno FROM branchinfo";
+                    $result = mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
                     echo '<option value="'.$row['branchno'].'">'.$row['branchname'].'</option>';
-                }
+                    }
+                
             ?>
         </select>
+
+        Select month and year :            
+        <input type="month" name="month">
 
         <button type="submit" class="btn btn-success">Select</button>
         
     </form>
    
-
+    <br><br>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -43,16 +47,29 @@
         </thead>
         <tbody>
             <?php
+            error_reporting(0);
             $Branch=$_GET['branch'];
+            $Month=$_GET['month'];
+            if($Branch!="")
+            echo '<br>Find from '.$Branch.' in '.$Month.'<br>';
+            $sql =
+            "SELECT r.RoomType,COUNT(r.RoomType) AS CountRoom 
+            FROM roominfo r
+            INNER JOIN bookingroom b
+                ON r.RoomID = b.RoomID
+            INNER JOIN bookinginfo i 
+                ON b.BookingNo = i.BookingNo
+            WHERE BranchNo = '$Branch' AND CheckInDate LIKE '$Month%'
+            GROUP BY roomtype";
 
-            $sql = "SELECT RoomType,COUNT(RoomType) AS CountRoom FROM roominfo WHERE BranchNo = '$Branch' GROUP BY roomtype";
             $result = mysqli_query($con,$sql);
             while($row=mysqli_fetch_array($result)){
                 echo '<tr>';
                 echo '<td>'.$row['RoomType'].'</td>';
                 echo '<td>'.$row['CountRoom'].'</td>';
                 echo '</tr>';
-            }?>
+            }
+            ?>
         </tbody>
     </table>
 </div>
