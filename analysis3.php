@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <h3>Analysis 3</h3>
-    <br>
+    แสดงจำนวนการจองห้องประเภทต่างๆของโรงแรมโดยการเลือกสาขาและเดือน <br><br>
     <form action="#" method="get">
         <select name="branch" class="form-control">
             <option selected value="">Choose Hotel</option>
@@ -32,6 +32,7 @@
 
         <button type="submit" class="btn btn-success">Select</button>
     </form>
+    <br>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -45,7 +46,7 @@
             $Branch=$_GET['branch'];
             $Month=$_GET['month'];
             if($Branch!="")
-            echo '<br>Find from '.$Branch.' in '.$Month.'<br>';
+            echo 'Find from '.$Branch.' in '.$Month.'<br>';
             $sql =
             "SELECT r.RoomType,COUNT(r.RoomType) AS CountRoom 
             FROM roominfo r
