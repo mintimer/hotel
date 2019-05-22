@@ -5,7 +5,7 @@
     </head>
     <body>
     
-        <b>Find Staff Information.</b><br>
+        <b>Find Staff Information</b><br>
 
         <form action="/Test Query.php" method="post">
             <div class="form-group">
