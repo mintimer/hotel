@@ -12,8 +12,8 @@
 
 <body>
 <div class="container">
-    <h3>Analysis 3</h3>
-    แสดงจำนวนการจองห้องประเภทต่างๆของโรงแรมโดยการเลือกสาขาและเดือน <br><br>
+    <h3>Analysis 2</h3>
+    จำนวนพนักงานในตำแหน่งต่างๆในโรงแรมแต่ละสาขา <br><br>
     <form action="#" method="get">
         <select name="branch" class="form-control">
             <option selected value="">Choose Hotel</option>
@@ -27,47 +27,41 @@
             ?>
         </select>
 
-        Select month and year :            
-        <input type="month" name="month">
-
         <button type="submit" class="btn btn-success">Select</button>
     </form>
     <br>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>RoomType</th>
-                <th>Count</th>
+                <th>Position</th>
+                <th>Amount</th>
             </tr>
         </thead>
         <tbody>
             <?php
             error_reporting(0);
             $Branch=$_GET['branch'];
-            $Month=$_GET['month'];
             if($Branch!="")
-            echo 'Find from '.$Branch.' in '.$Month.'<br>';
+            echo 'Branch : '.$Branch;
             $sql =
-            "SELECT r.RoomType,COUNT(r.RoomType) AS CountRoom 
-            FROM roominfo r
-            INNER JOIN bookingroom b
-                ON r.RoomID = b.RoomID
-            INNER JOIN bookinginfo i 
-                ON b.BookingNo = i.BookingNo
-            WHERE BranchNo = '$Branch' AND CheckInDate LIKE '$Month%'
-            GROUP BY roomtype";
+            "SELECT Position, COUNT(StaffID) AS Amount 
+            FROM staffinfo
+            WHERE BranchNo = '$Branch'
+            GROUP BY Position";
             echo'<br>';
             $result = mysqli_query($con,$sql);
             $total = 0;
             while($row=mysqli_fetch_array($result)){
                 echo '<tr>';
-                echo '<td>'.$row['RoomType'].'</td>';
-                echo '<td>'.$row['CountRoom'].'</td>';
-                $total = $total + $row['CountRoom'];
+                echo '<td>'.$row['Position'].'</td>';
+                echo '<td>'.$row['Amount'].'</td>';
+                $total = $total + $row['Amount'];
                 echo '</tr>';
             }
             echo '<tr><td>Total</td><td>'.$total.'</td></tr>';
             ?>
+           
+
         </tbody>
     </table>
 </div>

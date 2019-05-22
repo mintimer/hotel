@@ -12,52 +12,33 @@
 
 <body>
 <div class="container">
-    <h3>Analysis 1</h3>
-    จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน <br><br>
-    <form action="#" method="get">
-        Select month and year :            
-        <input type="month" name="month">
-
-        <button type="submit" class="btn btn-success">Select</button>
-    </form>
-    <br>
+    <h3>Analysis 6</h3>
+    แสดงสมาชิก 10 คนแรกที่มีคะแนนสะสมมากที่สุด <br><br>
 
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>Branch</th>
-                <th>Guest</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
             </tr>
         </thead>
         <tbody>
             <?php
             error_reporting(0);
-            $Month=$_GET['month'];
-            if($Month!="")
-            echo 'Guest(s) in '.$Month;
             $sql =
-            "SELECT i.BranchName,SUM(b.AmountOfGuest) AS Guests
-            FROM branchinfo i 
-            INNER JOIN roominfo r 
-                ON i.BranchNo = r.BranchNo
-            INNER JOIN bookingroom b 
-                ON r.RoomID = b.RoomID
-            INNER JOIN bookinginfo O
-                on o.BookingNo = b.BookingNo
-            WHERE o.CheckInDate LIKE '$Month%'
-            GROUP BY i.BranchNo";
-            echo'<br><br>';
+            "SELECT FirstName,LastName,Point
+            FROM memberinfo
+            ORDER BY point DESC
+            LIMIT 10";
             $result = mysqli_query($con,$sql);
-            $total = 0;
-            if($Month!="")
             while($row=mysqli_fetch_array($result)){
                 echo '<tr>';
-                echo '<td>'.$row['BranchName'].'</td>';
-                echo '<td>'.$row['Guests'].'</td>';
-                $total = $total + $row['Guests'];
+                echo '<td>'.$row['FirstName'].'</td>';
+                echo '<td>'.$row['LastName'].'</td>';
+                echo '<td>'.$row['Point'].'</td>';
                 echo '</tr>';
             }
-            echo '<tr><td>Total</td><td>'.$total.'</td></tr>';
             ?>
         </tbody>
     </table>
