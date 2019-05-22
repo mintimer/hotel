@@ -12,7 +12,7 @@
 
 <body>
 <div class="container">
-    <h3>Hotel Infomation</h3>
+    <h3>Analysis 3</h3>
     <br>
     <form action="#" method="get">
         <select name="branch" class="form-control">
@@ -31,10 +31,7 @@
         <input type="month" name="month">
 
         <button type="submit" class="btn btn-success">Select</button>
-        
     </form>
-   
-    <br><br>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
