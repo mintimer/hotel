@@ -12,34 +12,34 @@
 
 <body>
 <div class="container">
-    <h3>Analysis 11</h3>
-    จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน 5 เดือนล่าสุด <br><br>
+    <h3>Analysis A</h3>
+    แสดงรายได้รวมของแต่ละสาขา <br><br>
 
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>Year</th>
-                <th>Month</th>
-                <th>Amount of new member</th>
+                <th>Branch</th>
+                <th>Income</th>
             </tr>
         </thead>
         <tbody>
             <?php
             error_reporting(0);
             $sql =
-            "SELECT MONTH(SignUpDateTime) AS month ,YEAR(SignUpDateTime) AS year, COUNT(UserID) as count
-            FROM memberinfo
-            WHERE SignUpDateTime < '2019-06-30 00:00:00'
-            GROUP BY YEAR(SignUpDateTime) DESC,MONTH(SignUpDateTime) DESC
-            LIMIT 5";
+            "SELECT DISTINCT o.BranchName, SUM(DISTINCT b.TotalPrice) AS income
+            FROM bookingroom br, bookinginfo b, roominfo r,branchinfo o
+            WHERE b.BookingNo = br.BookingNo AND br.RoomID = r.RoomID AND o.branchNo = r.branchNo
+            GROUP BY r.BranchNo";
             $result = mysqli_query($con,$sql);
+            $total = 0;
             while($row=mysqli_fetch_array($result)){
                 echo '<tr>';
-                echo '<td>'.$row['year'].'</td>';
-                echo '<td>'.$row['month'].'</td>';
-                echo '<td>'.$row['count'].'</td>';
+                echo '<td>'.$row['BranchName'].'</td>';
+                echo '<td>'.$row['income'].'</td>';
+                $total = $total + $row['income'];
                 echo '</tr>';
             }
+            echo '<tr><td>Total</td><td>'.$total.'</td></tr>';
             ?>
         </tbody>
     </table>
