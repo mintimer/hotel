@@ -12,7 +12,7 @@
 
 <body>
 <div class="container">
-    <h3>Analysis A</h3>
+    <h3>Analysis 5</h3>
     แสดงรายได้รวมของแต่ละสาขา <br><br>
 
     <table class="table table-striped">

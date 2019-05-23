@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <h3>Analysis B</h3>
+        <h3>Analysis 7</h3>
         จำนวนพนักงานส่วนต่างๆแบ่งตามสัญชาติ <br><br>
         <form action="#" method="get">
             <select name="nation" class="form-control">
