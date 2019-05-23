@@ -9,21 +9,19 @@
     <?php include('connect.php');
     ?>
 </head>
-
 <body>
     <div class="container">
-        <h3>Analysis B</h3>
-        จำนวนพนักงานส่วนต่างๆแบ่งตามสัญชาติ <br><br>
+        <h3>Analysis 12</h3>
+        ห้องพักที่ลูกค้าพึงพอใจมากที่สุด 5 อันดับแรกของสาขาที่เลือก <br><br>
         <form action="#" method="get">
-            <select name="nation" class="form-control">
-                <option selected value="">Choose Nationality</option>
+            <select name="branch" class="form-control">
+                <option selected value="">Choose Hotel</option>
                 <?php
-                $sql = "SELECT Nationality FROM staffinfo GROUP BY Nationality";
+                $sql = "SELECT branchname,branchno FROM branchinfo";
                 $result = mysqli_query($con, $sql);
                 while ($row = mysqli_fetch_array($result)) {
-                    echo '<option value="' . $row['Nationality'] . '">' . $row['Nationality'] . '</option>';
+                    echo '<option value="' . $row['branchno'] . '">' . $row['branchname'] . '</option>';
                 }
-                echo '<option value=all>All Nationality</option>';
                 ?>
             </select>
 
@@ -33,39 +31,33 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Nationality</th>
-                    <th>Position</th>
-                    <th>Amount</th>
+                    <th>RoomID</th>
+                    <th>RoomType</th>
+                    <th>Rating</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 error_reporting(0);
-                $Branch = $_GET['nation'];
-                if ($Branch != "all") {
-                    $sql =
-                        "SELECT Nationality, Position, COUNT(StaffID) AS count
-            FROM staffinfo
-            WHERE Nationality='$Branch'
-            GROUP BY Position";
-                } else {
-                    $sql =
-                        "SELECT Nationality, Position, COUNT(StaffID) AS count
-                FROM staffinfo
-                GROUP BY Nationality, Position";
-                }
+                $Branch = $_GET['branch'];
+                if ($Branch != "")
+                    echo 'Branch : ' . $Branch;
+                $sql =
+                    "SELECT b.RoomID, rt.RoomType, AVG(r.RatingScore) AS Rate
+            FROM reviewinfo r, bookingroom b, roominfo rf, roomtype rt
+            WHERE r.BookingNo=b.BookingNo AND b.RoomID=rf.RoomID AND rf.RoomType=rt.RoomType AND rf.BranchNo='$Branch'
+            GROUP BY b.RoomID
+            ORDER BY Rate DESC
+            LIMIT 5";
                 echo '<br>';
                 $result = mysqli_query($con, $sql);
-                $total = 0;
                 while ($row = mysqli_fetch_array($result)) {
                     echo '<tr>';
-                    echo '<td>' . $row['Nationality'] . '</td>';
-                    echo '<td>' . $row['Position'] . '</td>';
-                    echo '<td>' . $row['count'] . '</td>';
-                    $total = $total + $row['count'];
+                    echo '<td>' . $row['RoomID'] . '</td>';
+                    echo '<td>' . $row['RoomType'] . '</td>';
+                    echo '<td>' . $row['Rate'] . '</td>';
                     echo '</tr>';
                 }
-                echo '<tr><td>Total</td><td></td><td>' . $total . '</td></tr>';
                 ?>
             </tbody>
         </table>
