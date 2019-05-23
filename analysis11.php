@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <h3>Analysis 11</h3>
-    จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน 5 เดือนล่าสุด <br><br>
+    จำนวนคนที่สมัครสมาชิกในโรงแรมแต่ละเดือน 5 เดือนล่าสุด <br><br>
 
     <table class="table table-striped">
         <thead class="thead-dark">
