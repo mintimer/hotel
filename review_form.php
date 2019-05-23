@@ -5,9 +5,11 @@
 <body>
     <h1> Rating Service Form</h1>
     <?php
-        $userID = $_POST["u_id"];
-        $u_firstname = $_POST["u_firstname"];
-        $u_lastname = $_POST["u_lastname"];
+        session_start();
+        $namee = $_SESSION['namee'];
+        $userID = $namee['userid'];
+        $u_firstname = $namee['firstname'];
+        $u_lastname = $namee["lastname"];  
     ?>
  
     <?php 

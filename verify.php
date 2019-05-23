@@ -10,6 +10,7 @@
         if($row['Username'] == $username && $row['Password'] == $password){
             $name = mysqli_query($con,"SELECT firstname,lastname,userid FROM memberinfo WHERE Username = '$username'");
             $namee = mysqli_fetch_array($name);
+            $_SESSION['namee']=$namee;
             $_SESSION['message'] = "Welcome "." ".$namee['firstname'];
             header("Location: welcome.php");
             
