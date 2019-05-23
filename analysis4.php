@@ -12,34 +12,28 @@
 
 <body>
 <div class="container">
-    <h3>Analysis 11</h3>
-    จำนวนคนที่สมัครสมาชิกในโรงแรมแต่ละเดือน 5 เดือนล่าสุด <br><br>
+    <h3>Analysis 4</h3>
+    แสดงอายุของพนักงาน <br><br>
 
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>Year</th>
-                <th>Month</th>
-                <th>Amount of new member</th>
+                <th>Age</th>
+                <th>Amount of Staff</th>
             </tr>
         </thead>
         <tbody>
             <?php
             error_reporting(0);
-            date_default_timezone_set('Asia/Bangkok');
-            $date = date('Y-m-d h:i:s a', time());
-            echo 'Current time is '.$date;
             $sql =
-            "SELECT MONTH(SignUpDateTime) AS month ,YEAR(SignUpDateTime) AS year, COUNT(UserID) as count
-            FROM memberinfo
-            WHERE SignUpDateTime < '$date'
-            GROUP BY YEAR(SignUpDateTime) DESC,MONTH(SignUpDateTime) DESC
-            LIMIT 5";
+            "SELECT YEAR(CURRENT_TIMESTAMP) - YEAR(DOB)  AS Age , COUNT(StaffID) AS count
+            FROM staffinfo
+            GROUP BY AGE
+            ORDER BY AGE";
             $result = mysqli_query($con,$sql);
             while($row=mysqli_fetch_array($result)){
                 echo '<tr>';
-                echo '<td>'.$row['year'].'</td>';
-                echo '<td>'.$row['month'].'</td>';
+                echo '<td>'.$row['Age'].'</td>';
                 echo '<td>'.$row['count'].'</td>';
                 echo '</tr>';
             }
