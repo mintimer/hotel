@@ -27,10 +27,10 @@
     <div id="frm">
         <form action="userhome.php" method="POST">
             <label>Username: </label>
-            <input type="text" id="user" name="user"><br>
+            <input type="text" name="user"><br>
             
             <label>Password: </label>
-            <input type="text" id="pass" name="pass"><br>
+            <input type="text" name="pass"><br>
             <input type="submit" id="btn" value="login">
 
         </form>

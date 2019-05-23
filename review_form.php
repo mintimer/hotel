@@ -15,12 +15,9 @@
         echo " [ ".$u_firstname." ".$u_lastname." ]";
     ?>
     <form action="review_success.php" method="POST">
-        <b>Review ID.</b> <input type="number"  name="review_id"><br>
-        <b>Booking No.</b> <input type="number" name="booking_no"><br>
-    </form>
-
-   <!-- Star rating -->
-    <form class="rating" action="review_success.php" method="POST">
+        <b>Booking No.</b> 
+        <input type="number" name="booking_no"><br>
+        <div>
         <label>
             <input type="radio" name="stars" value="1" />
             <span class="icon">★</span>
@@ -51,8 +48,7 @@
             <span class="icon">★</span>
             <span class="icon">★</span>
         </label>
-    </form>
-    
+        </div>
     <style>
             .rating {
         display: inline-block;
@@ -127,12 +123,11 @@
         console.log('New star rating: ' + this.value);
         });    
     </script>
-    <form action="review_success.php" method="POST">
         Comment<br>
         <textarea name="comment" rows="4" cols="20">    
         </textarea><br>
         <input type="submit" value="submit">
-    </form>
+    </form> 
 
 </body>
 </html>
