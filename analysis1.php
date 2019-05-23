@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <h3>Analysis 1</h3>
-    จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน ]]]]]]] <br><br>
+    จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน<br><br>
     <form action="#" method="get">
         Select month and year :            
         <input type="month" name="month">
