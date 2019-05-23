@@ -21,7 +21,7 @@
             <div class="card" style="width: Responsive;">
                     <img class="card-img-top" src="pic/hotel.jpeg" alt="Card image cap">
                     <div class="card-body">
-                            <form action="welcome.php" method="post" >
+                            <form action="login.php" method="post" >
                                     <div class="form-group">
                                       <label for="inputusername">Username</label>
                                       <input type="username" name="user" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">  
@@ -32,11 +32,26 @@
                                       <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                     <button type="submit" name="btn" value="member" class="btn btn-outline-primary" aria-pressed="true">LOG IN</button>
-                                    <button type="submit" name="btn" value="GUEST" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
+                                    <button type="submit" name="btn" value="guest" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
                             
                                     
                                   </form>
                     </div>
             </div>
+            <?php
+            session_start();
+                if(isset($_POST['btn'])){
+                        if($_POST['btn']=='member')
+                        {
+                                $_SESSION['href']='#';
+                                require 'verify.php';
+                        }else{
+                                $_SESSION['message']="Log in";
+                                $_SESSION['href']='login.php';
+                                header("Location: welcome.php");
+                        }
+                }
+
+                ?>
     </body>
 </html>
