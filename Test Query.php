@@ -13,10 +13,11 @@
   <table class="table">
 
     <?php
-    $con=mysqli_connect("127.0.0.1","root","","hotel");
-    if(mysqli_connect_errno()){
-        echo "Failed to connect to MySQL:" .mysqli_connect_error();
-    }
+    include('connect.php');
+    // $con=mysqli_connect("127.0.0.1","root","","hotel");
+    // if(mysqli_connect_errno()){
+    //     echo "Failed to connect to MySQL:" .mysqli_connect_error();
+    // }
     $StaffID = mysqli_real_escape_string($con,$_POST["StaffID"]);
     $sql = "SELECT s.FirstName, s.LastName, s.Salary, s.Position, b.BranchName 
             FROM StaffInfo s JOIN BranchInfo b ON s.BranchNO = b.BranchNO 
