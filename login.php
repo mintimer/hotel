@@ -24,12 +24,12 @@
                             <form action="login.php" method="post" >
                                     <div class="form-group">
                                       <label for="inputusername">Username</label>
-                                      <input type="username" name="user" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">  
+                                      <input type="username" name="user" required class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">  
                                     </div>
 
                                     <div class="form-group">
                                       <label for="InputPassword">Password</label>
-                                      <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                      <input type="password" name="pass" required class="form-control" id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                     <button type="submit" name="btn" value="member" class="btn btn-outline-primary" aria-pressed="true">LOG IN</button>
                                     <button type="submit" name="btn" value="guest" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
