@@ -15,7 +15,7 @@
 
            
            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E0F3EF;" id="mynav">
-                <a class="navbar-brand" href="#" style="color: darkslategray">
+                <a class="navbar-brand"  style="color: darkslategray">
                     <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     JustFang
                 </a>
