@@ -48,18 +48,18 @@
                                     Report
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="analysis1.php">จำนวนคนที่เข้าพักในโรงแรมสาขาต่างๆแต่ละเดือน</a>
-                                  <a class="dropdown-item" href="analysis2.php">จำนวนพนักงานในตำแหน่งต่างๆในโรงแรมแต่ละสาขา</a>
-                                  <a class="dropdown-item" href="analysis3.php">จำนวนการจองห้องประเภทต่างๆของโรงแรมโดยการเลือกสาขาและเดือน</a>
-                                  <a class="dropdown-item" href="analysis4.php">อายุของพนักงาน</a>
-                                  <a class="dropdown-item" href="analysis5.php">รายได้รวมของแต่ละสาขา</a>
-                                  <a class="dropdown-item" href="analysis6.php">สมาชิกที่มีคะแนนสะสมตามที่กำหนด</a>
-                                  <a class="dropdown-item" href="analysis7.php">จำนวนพนักงานส่วนต่างๆแบ่งตามสัญชาติ</a>
-                                  <a class="dropdown-item" href="analysis8.php">จำนวนพนักงานในโรงแรมตามสาขาที่เลือกจำแนกตามกรุ๊ปเลือด</a>
-                                  <a class="dropdown-item" href="analysis9.php">จำนวนวันของคนที่เข้ามาใช้บริการของโรงแรมนานที่สุด 10 อันดับแรก</a>
-                                  <a class="dropdown-item" href="analysis10.php">ลักษณะการจ่ายเงินพร้อมยอมรวมในแต่ละสาขา</a>
-                                  <a class="dropdown-item" href="analysis11.php">จำนวนคนที่สมัครสมาชิกในโรงแรมแต่ละเดือน 5 เดือนล่าสุด</a>
-                                  <a class="dropdown-item" href="analysis12.php">ห้องพักที่ลูกค้าพึงพอใจมากที่สุด 5 อันดับแรกของสาขาที่เลือก</a>
+                                  <a class="dropdown-item" href="analysis1.php">Monthly custumer</a>
+                                  <a class="dropdown-item" href="analysis2.php">Staff in position</a>
+                                  <a class="dropdown-item" href="analysis3.php">Monthly reservasion</a>
+                                  <a class="dropdown-item" href="analysis4.php">Age of employee</a>
+                                  <a class="dropdown-item" href="analysis5.php">Profit of each branch</a>
+                                  <a class="dropdown-item" href="analysis6.php">Member score</a>
+                                  <a class="dropdown-item" href="analysis7.php">Nation of employee</a>
+                                  <a class="dropdown-item" href="analysis8.php">Blood type of employee</a>
+                                  <a class="dropdown-item" href="analysis9.php">Top 10 duration</a>
+                                  <a class="dropdown-item" href="analysis10.php">Payment</a>
+                                  <a class="dropdown-item" href="analysis11.php">Lastest 5 month new member</a>
+                                  <a class="dropdown-item" href="analysis12.php">Top 5 room</a>
                                 </div>
                         </li>
 
