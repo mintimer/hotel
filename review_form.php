@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Rating form</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
@@ -11,8 +12,7 @@
     session_start();
     $namee = $_SESSION['namee'];
 
-    // $userID = $namee['userid'];
-    $userID = 'M0000000001';
+    $userID = $namee['userid'];
     $u_firstname = $namee['firstname'];
     $u_lastname = $namee['lastname'];
     ?>
@@ -25,10 +25,10 @@
         <b>Select room</b>
         <select name="roomtype" class="form-control">
             <?php
-                    if(!isset($_POST['roomtype'])){
-                        echo "<option select="."selected".">----------------------------------------</option>";
-                    }
-                    $sql = "SELECT ri.RoomType, ri.RoomID
+            if (!isset($_POST['roomtype'])) {
+                echo "<option select=" . "selected" . ">----------------------------------------</option>";
+            }
+            $sql = "SELECT ri.RoomType, ri.RoomID
                             FROM roominfo ri
                             WHERE ri.RoomID IN (SELECT br.RoomID
                                                 FROM bookingroom br
@@ -36,26 +36,40 @@
                                                                         FROM bookinginfo bi
                                                                         WHERE bi.UserID = '$userID' AND
                                                                         TIMESTAMPDIFF(DAY,bi.CheckOutDate,CURRENT_TIMESTAMP) <= 100 ) )";
-                    $result = mysqli_query($con,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                        if($_POST['roomtype'] == $row['RoomType']){
-                            echo "<option selected="."selected"." value='" . $row['RoomType'] . "'>" .$row['RoomType'].": ". $row['RoomID'] . "</option>";
-                        }else {
-                            echo "<option value='" . $row['RoomType'] . "'>" .$row['RoomType'].": ". $row['RoomID'] . "</option>";
-                        } 
-                    }
+            $result = mysqli_query($con, $sql);
+            while ($row = mysqli_fetch_array($result)) {
+                if ($_POST['roomtype'] == $row['RoomType']) {
+                    echo "<option selected=" . "selected" . " value='" . $row['RoomType'] . "'>" . $row['RoomType'] . ": " . $row['RoomID'] . "</option>";
+                } else {
+                    echo "<option value='" . $row['RoomType'] . "'>" . $row['RoomType'] . ": " . $row['RoomID'] . "</option>";
+                }
+            }
             ?>
         </select>
         <button type="submit" class="btn btn-info">Select</button>
     </form>
+
+
     <?php
-        if(isset($_POST['roomtype'])){
-            echo $_POST['roomtype'];
+        if (isset($_POST['roomtype'])) {
+            $sql2 = "SELECT bri.BranchName, bri.BranchCountry
+                    FROM branchinfo bri
+                    WHERE bri.BranchNo = (SELECT ri.BranchNo
+                                          FROM roominfo ri
+                                          WHERE ri.RoomID = " . $row['RoomID'] . ")";
+            $result2 = mysqli_query($con, $sql2);
+            while ($row2 = mysqli_fetch_array($result2)) {
+                echo $row2['BranchCountry']." ".$row2['BranchName'];
+            }
         }
     ?>
+    <br>
 
-    <form action="review_form.php" method="POST">
-        <div>
+
+    <form action="review_form.php" class="rating" method="POST">
+        <div <?php if (!isset($_POST['roomtype'])) {
+                    echo "style=" . "visibility" . ": hidden";
+                } ?>>
             <label>
                 <input type="radio" name="stars" value="1" />
                 <span class="icon">★</span>
@@ -160,22 +174,28 @@
                 console.log('New star rating: ' + this.value);
             });
         </script>
-        Comment<br>
-        <textarea name="comment" rows="4" cols="20">
-        </textarea><br>
-        <input type="button" onclick="dialog()" value="submit">
+
+        <div 
+        <?php if (!isset($_POST['roomtype'])) {
+                    echo "style=" . "visibility" . ": hidden";
+                }?>>
+            <b>Comment</b><br>
+                <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
+            <br><input type="button" onclick="dialog()" value="submit">
+        </div>
     </form>
     <script>
-        function dialog(){
+        function dialog() {
             Swal.fire({
-            position: 'top',
-            type: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
+                position: 'top',
+                type: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     </script>
+   <?php mysqli_close($con); ?>
 </body>
 
 </html>

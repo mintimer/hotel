@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="navbar-nav mr-auto">              
                     <li class="nav-item">
-                        <a class="nav-link" href="staff.php" style="color: #eceaea">HOME</a>
+                        <a class="nav-link" href="staff.php" style="color: white">HOME</a>
                     </li>
 
                     <li class="nav-item">
