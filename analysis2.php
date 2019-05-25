@@ -59,7 +59,7 @@
                                   <a class="dropdown-item" href="analysis9.php">Top 10 duration</a>
                                   <a class="dropdown-item" href="analysis10.php">Payment</a>
                                   <a class="dropdown-item" href="analysis11.php">Lastest 5 month new member</a>
-                                  <a class="dropdown-item" href="analysis12.php">Top 5 room</a>
+                                  <a class="dropdown-item" href="analysis12.php">Top 5 Room</a>
                                 </div>
                         </li>
 
