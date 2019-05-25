@@ -35,7 +35,7 @@
               </form>
               <section class="py-100">
 
-                    <div class="container" style="margin-top: 200px; ">
+                    <div class="container" style="margin-top: 250px; ">
                         <p>TAG YOUR SHOTS</p>
                         <h1 class="font-weight-light">#JUSTFANG #HappyWithJustDream</h1>
                     </div>
