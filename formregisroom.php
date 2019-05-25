@@ -14,9 +14,9 @@
     <div class="container">
         <h3>Room Registration</h3>
         ฟอร์มเพิ่มห้องพัก <br><br>
-        
+
         <form action="#" method="get">
-        <label for="validationHotel">Select Hotel</label>
+            <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
                 <option selected value="">Hotel</option>
                 <?php
@@ -31,11 +31,11 @@
 
             <div class="form-row">
                 <div class="col">
-                <label for="validationRoomNumber">Room Number</label>
+                    <label for="validationRoomNumber">Room Number</label>
                     <input type="text" id="validationRoomNumber" class="form-control" placeholder="Enter Room Number" name=roomnumber required>
                 </div>
                 <div class="col">
-                <label for="validationRoomType">Room Type</label> 
+                    <label for="validationRoomType">Room Type</label>
                     <select name="roomtype" id="validationRoomType" class="custom-select" required>
                         <option selected value="">Choose Room Type</option>
                         <?php
@@ -48,24 +48,16 @@
                     </select>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="col">
-                    Price
-                </div>
-                <div class="col">
 
-                </div>
-                <div class="col">
-                    Can be cancel
-                </div>
-            </div>
             <div class="form-row">
                 <div class="col">
-                    <input class="form-control" type="number" name="price">
+                    <label for="validationPrice">Price</label>
+                    <input class="form-control is-invalid" id="validationRoomPrice" type="number" name="price" required onchange="validate()">
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <select name="currency" class="custom-select" required>
+                        <label for="validationcurrency">Currency</label>
+                        <select name="currency" id="validationRoomCurrency" class="custom-select" required>
                             <option selected value="">Choose currency</option>
                             <option value='thai'>Baht</option>
                             <option value='us'>Dollars</option>
@@ -75,13 +67,14 @@
                 </div>
                 <div class="col">
                     <div class="col">
-                        <div class="custom-control custom-radio">
+                        <label for="validationCancel">Can be Cancel</label>
+                        <div class="custom-control custom-radio" id="validationRoomCancel">
                             <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                            <label class="custom-control-label" for="customRadio1">Yes</label>
                         </div>
                         <div class="custom-control custom-radio">
                             <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                            <label class="custom-control-label" for="customRadio2">No</label>
                         </div>
                     </div>
                 </div>
@@ -125,6 +118,16 @@
         </tbody>
     </table> -->
     </div>
+    <script>
+        function validate() {
+            if (document.getElementById("validationRoomPrice").value) {
+                document.getElementById("validationRoomPrice").className = "form-control is-valid";
+            }
+            else {
+                document.getElementById("validationRoomPrice").className = "form-control is-invalid";
+            }
+        }
+    </script>
 </body>
 <?php mysqli_close($con); ?>
 
