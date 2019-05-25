@@ -12,7 +12,7 @@
     $namee = $_SESSION['namee'];
 
     // $userID = $namee['userid'];
-    $userID = "M0000000003";
+    $userID = 'M0000000001';
     $u_firstname = $namee['firstname'];
     $u_lastname = $namee['lastname'];
     ?>
@@ -21,25 +21,40 @@
     echo "<b>User ID: </b>" . $userID;
     echo " [ " . $u_firstname . " " . $u_lastname . " ]";
     ?>
-    <form action="review_success.php" method="POST">
-        <select name="roomid" class="form-control">
-            <option selected value="">----------------</option>
+    <form action="#" method="POST">
+        <b>Select room</b>
+        <select name="roomtype" class="form-control">
             <?php
-                    $sql = "SELECT * FROM bookinginfo WHERE UserID IS NOT NULL";
+                    if(!isset($_POST['roomtype'])){
+                        echo "<option select="."selected".">----------------------------------------</option>";
+                    }
+                    $sql = "SELECT ri.RoomType, ri.RoomID
+                            FROM roominfo ri
+                            WHERE ri.RoomID IN (SELECT br.RoomID
+                                                FROM bookingroom br
+                                                WHERE br.BookingNo IN (SELECT bi.BookingNo
+                                                                        FROM bookinginfo bi
+                                                                        WHERE bi.UserID = '$userID' AND
+                                                                        TIMESTAMPDIFF(DAY,bi.CheckOutDate,CURRENT_TIMESTAMP) <= 100 ) )";
                     $result = mysqli_query($con,$sql);
                     while($row=mysqli_fetch_array($result)){
-                        echo "<option value='" . $row['BookingNo'] . "'>" . $row['BookingNo'] . "</option>";
+                        if($_POST['roomtype'] == $row['RoomType']){
+                            echo "<option selected="."selected"." value='" . $row['RoomType'] . "'>" .$row['RoomType'].": ". $row['RoomID'] . "</option>";
+                        }else {
+                            echo "<option value='" . $row['RoomType'] . "'>" .$row['RoomType'].": ". $row['RoomID'] . "</option>";
+                        } 
                     }
             ?>
         </select>
-
-        
-        <input type="submit">
+        <button type="submit" class="btn btn-info">Select</button>
     </form>
+    <?php
+        if(isset($_POST['roomtype'])){
+            echo $_POST['roomtype'];
+        }
+    ?>
 
     <form action="review_form.php" method="POST">
-        <b>Booking No.</b>
-        <!-- <input type="number" name="booking_no"><br> -->
         <div>
             <label>
                 <input type="radio" name="stars" value="1" />

@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+  <head>
     <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -8,10 +8,10 @@
     <?php include('connect.php');
     ?>
     <link rel="stylesheet" href="fontstyle.css">
-    <title>JustFang Hotel</title>
+    <title>Staff</title>
   </head>
     
-    <body>
+  <body class="fontstyle">
       <?php session_start(); ?>
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
                 <a class="navbar-brand" style="color: white">
@@ -27,48 +27,51 @@
                     <ul class="navbar-nav mr-auto">
                               
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color:white">HOME</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  FIND A HOTEL
-                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="kmutt.html">KMUTT</a>
-                                  <a class="dropdown-item" href="#">KMITL</a>
-                                </div>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    PROMOTION
-                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">SUMMER 2019</a>
-                                  <a class="dropdown-item" href="#">STUDENT</a>
-                                </div>
+                            <a class="nav-link disabled" href="#" style="color: #eceaea">HOME</a>
                         </li>
 
                         <li class="nav-item">
-                          <a class="nav-link " href="review_form.php" style="color:white">Review</a>
+                          <a class="nav-link " href="#" style="color:white">Check in</a>
                       </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Room
+                             </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Find Room</a>
+                                  <a class="dropdown-item" href="#">Add New Room</a>
+                                </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Report
+                             </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="analysis1.php">Monthly Custumer</a>
+                                  <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
+                                  <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
+                                  <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
+                                  <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
+                                  <a class="dropdown-item" href="analysis6.php">Member Score</a>
+                                  <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
+                                  <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
+                                  <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>
+                                  <a class="dropdown-item" href="analysis10.php">Payment</a>
+                                  <a class="dropdown-item" href="analysis11.php">Lastest 5 Month New Member</a>
+                                  <a class="dropdown-item" href="analysis12.php">Top 5 Room</a>
+                                </div>
+                        </li>
+
+
                               
                     </ul>
 
-                    <ul class="navbar-nav ml-auto">
-                              
-                         <li class="nav-item">
-                            
-                            <a class="nav-link" href=<?php echo $_SESSION['href'] ?> style="color: white"><?php echo $_SESSION['message']?> </a>
-          
-                         </li>
-                                
-                    </ul>
                            
                 </div>
             </nav>
 
-            <img class="card-img-top" src="pic/hotel2.jpeg" alt="Card image cap">
+            <img class="card-img-top" src="pic/hotel5.jpeg" alt="Card image cap" style="margin: -21.5% 0;">
     </body>
 </html>
