@@ -26,8 +26,8 @@
         <div class="container h-50">
           <div class="row h-50 align-items-center">
             <div class="col-12 text-center">
-              <h1 class="font-weight-light" style="font-size:80px; color: black">Welcome to</h1>
-              <p class="lead" style="font-size:30px; color: black">JustFang Hotel & Resort</p>
+              <h1 class="font-weight-light" style="font-size:80px;">Welcome to</h1>
+              <p class="lead" style="font-size:30px;">JustFang Hotel & Resort</p>
               <form>
                 <button type="submit" formaction ="staff.php" class="btn btn-light btn-lg btn-block">Staff</button> 
                 <br>
@@ -35,7 +35,7 @@
               </form>
               <section class="py-100">
 
-                    <div class="container" style="margin-top: 200px; ">
+                    <div class="container" style="margin-top: 250px; ">
                         <p>TAG YOUR SHOTS</p>
                         <h1 class="font-weight-light">#JUSTFANG #HappyWithJustDream</h1>
                     </div>
