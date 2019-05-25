@@ -1,9 +1,0 @@
-.bgreport {
-    height: 95vh;
-    min-height: 500px;
-    background-image: url('pic/hotel7.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
