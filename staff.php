@@ -1,16 +1,17 @@
 <html lang="en">
-    <head>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        
-                        <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            <meta charset="utf-8">
-      <link rel="stylesheet" href="fangstyle.css">
-        <title>JustFang Hotel (Member)</title>
-    </head>
-    <body>
+    <?php include('connect.php');
+    ?>
+    <link rel="stylesheet" href="fontstyle.css">
+    <title>Staff</title>
+  </head>
+    
+  <body class="fontstyle">
       <?php session_start(); ?>
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
                 <a class="navbar-brand" href="#" style="color: white">
@@ -48,18 +49,18 @@
                                     Report
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="analysis1.php">Monthly custumer</a>
-                                  <a class="dropdown-item" href="analysis2.php">Staff in position</a>
-                                  <a class="dropdown-item" href="analysis3.php">Monthly reservasion</a>
-                                  <a class="dropdown-item" href="analysis4.php">Age of employee</a>
-                                  <a class="dropdown-item" href="analysis5.php">Profit of each branch</a>
-                                  <a class="dropdown-item" href="analysis6.php">Member score</a>
-                                  <a class="dropdown-item" href="analysis7.php">Nation of employee</a>
-                                  <a class="dropdown-item" href="analysis8.php">Blood type of employee</a>
-                                  <a class="dropdown-item" href="analysis9.php">Top 10 duration</a>
+                                  <a class="dropdown-item" href="analysis1.php">Monthly Custumer</a>
+                                  <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
+                                  <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
+                                  <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
+                                  <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
+                                  <a class="dropdown-item" href="analysis6.php">Member Score</a>
+                                  <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
+                                  <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
+                                  <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>
                                   <a class="dropdown-item" href="analysis10.php">Payment</a>
-                                  <a class="dropdown-item" href="analysis11.php">Lastest 5 month new member</a>
-                                  <a class="dropdown-item" href="analysis12.php">Top 5 room</a>
+                                  <a class="dropdown-item" href="analysis11.php">Lastest 5 Month New Member</a>
+                                  <a class="dropdown-item" href="analysis12.php">Top 5 Room</a>
                                 </div>
                         </li>
 
