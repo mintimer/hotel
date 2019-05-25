@@ -13,7 +13,7 @@
     <body>
       <?php session_start(); ?>
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
-                <a class="navbar-brand" href="#" style="color: white">
+                <a class="navbar-brand" style="color: white">
                     <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     JustFang
                 </a>
@@ -26,7 +26,7 @@
                     <ul class="navbar-nav mr-auto">
                               
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" style="color: #eceaea">HOME</a>
+                            <a class="nav-link" href="#" style="color:white">HOME</a>
                         </li>
 
                         <li class="nav-item dropdown">
