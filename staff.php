@@ -27,7 +27,7 @@
                     <ul class="navbar-nav mr-auto">
                               
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white">HOME</a>
+                            <a class="nav-link disabled" href="#" style="color: #eceaea">HOME</a>
                         </li>
 
                         <li class="nav-item">
