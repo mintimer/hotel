@@ -11,7 +11,8 @@
     session_start();
     $namee = $_SESSION['namee'];
 
-    $userID = $namee['userid'];
+    // $userID = $namee['userid'];
+    $userID = "M0000000003";
     $u_firstname = $namee['firstname'];
     $u_lastname = $namee['lastname'];
     ?>
@@ -20,19 +21,25 @@
     echo "<b>User ID: </b>" . $userID;
     echo " [ " . $u_firstname . " " . $u_lastname . " ]";
     ?>
-    <form action="review_form.php" method="POST">
-        <b>Booking No.</b>
-        <!-- <input type="number" name="booking_no"><br> -->
-        <select name="bookingno" class="form-control">
-            <option selected value="">----------</option>
+    <form action="review_success.php" method="POST">
+        <select name="roomid" class="form-control">
+            <option selected value="">----------------</option>
             <?php
-                    $sql = "SELECT * FROM branchinfo";
+                    $sql = "SELECT * FROM bookinginfo WHERE UserID IS NOT NULL";
                     $result = mysqli_query($con,$sql);
                     while($row=mysqli_fetch_array($result)){
-                        echo "111";
+                        echo "<option value='" . $row['BookingNo'] . "'>" . $row['BookingNo'] . "</option>";
                     }
             ?>
         </select>
+
+        
+        <input type="submit">
+    </form>
+
+    <form action="review_form.php" method="POST">
+        <b>Booking No.</b>
+        <!-- <input type="number" name="booking_no"><br> -->
         <div>
             <label>
                 <input type="radio" name="stars" value="1" />
