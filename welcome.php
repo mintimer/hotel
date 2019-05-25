@@ -11,15 +11,7 @@
         <title>JustFang Hotel (Member)</title>
     </head>
     <body>
-      <?php 
-          if($_POST['btn']=='member'){
-            $message="Welcome ".$_POST['user'];
-            $href='#';
-          }else {
-            $message="Log in";
-            $href="login.php";
-          }
-      ?>
+      <?php session_start(); ?>
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
                 <a class="navbar-brand" href="#" style="color: white">
                     <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -58,7 +50,7 @@
                         </li>
 
                         <li class="nav-item">
-                          <a class="nav-link " href="#" style="color:white">Review</a>
+                          <a class="nav-link " href="review_form.php" style="color:white">Review</a>
                       </li>
                               
                     </ul>
@@ -67,7 +59,7 @@
                               
                          <li class="nav-item">
                             
-                            <a class="nav-link" href=<?php echo $href ?> style="color: white"><?php echo $message ?> </a>
+                            <a class="nav-link" href=<?php echo $_SESSION['href'] ?> style="color: white"><?php echo $_SESSION['message']?> </a>
           
                          </li>
                                 

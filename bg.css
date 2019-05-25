@@ -1,0 +1,9 @@
+.masthead {
+  height: 95vh;
+  min-height: 500px;
+  background-image: url('pic/hotel3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
