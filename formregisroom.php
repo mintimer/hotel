@@ -13,10 +13,11 @@
 <body>
     <div class="container">
         <h3>Room Registration</h3>
-        เพิ่มห้องพัก <br><br>
-        Select Hotel<br>
+        ฟอร์มเพิ่มห้องพัก <br><br>
+        
         <form action="#" method="get">
-            <select name="branch" class="form-control">
+        <label for="validationHotel">Select Hotel</label>
+            <select name="branch" id="validationHotel" class="custom-select" required>
                 <option selected value="">Hotel</option>
                 <?php
                 $sql = "SELECT branchname,branchno FROM branchinfo";
@@ -26,15 +27,17 @@
                 }
                 ?>
             </select>
+            <br>
 
-            RoomID<br>
             <div class="form-row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Room Number" name=roomnumber>
+                <label for="validationRoomNumber">Room Number</label>
+                    <input type="text" id="validationRoomNumber" class="form-control" placeholder="Enter Room Number" name=roomnumber required>
                 </div>
                 <div class="col">
-                    <select name="roomtype" class="form-control">
-                        <option selected value="">RoomType</option>
+                <label for="validationRoomType">Room Type</label> 
+                    <select name="roomtype" id="validationRoomType" class="custom-select" required>
+                        <option selected value="">Choose Room Type</option>
                         <?php
                         $sql = "SELECT RoomType FROM roomtype";
                         $result = mysqli_query($con, $sql);
@@ -45,11 +48,46 @@
                     </select>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="col">
+                    Price
+                </div>
+                <div class="col">
 
-            Price<br>
-            <input type="number" name="price" >
+                </div>
+                <div class="col">
+                    Can be cancel
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input class="form-control" type="number" name="price">
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="currency" class="custom-select" required>
+                            <option selected value="">Choose currency</option>
+                            <option value='thai'>Baht</option>
+                            <option value='us'>Dollars</option>
+                        </select>
 
-            <button type="submit" class="btn btn-success">Select</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success">Select</button>
+
         </form>
         <br>
         <!-- <table class="table table-striped">
