@@ -43,7 +43,13 @@
 
         <label for="discode">Discount Code</label>
         <input type="discountcode" name="disc" required class="form-control" id="discode" aria-describedby="discountHelp" placeholder="Enter Discount Code">
-        <button type="submit" name="checkdis" value="discount" class="btn btn-outline-primary" aria-pressed="true">Check</button>
+        <button type="submit" name="checkdis" value="discount" class="btn btn-outline-primary" aria-pressed="true" onClick="show2()">Check</button>
+        <p id="demo2"></p>
+        <script>
+            function show2(){
+                var x = document.getElementById("discode").value; 
+            }
+        </script>
     </body>
     </div>
 </html>
