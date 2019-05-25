@@ -16,7 +16,7 @@
             header("Location: welcome.php");
             
         }else{
-            echo "Failed to login.";
+            echo "<span style="."color:red".">Failed to login.</span>";
         }
         
 ?>

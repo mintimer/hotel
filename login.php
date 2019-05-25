@@ -9,49 +9,50 @@
     ?>
     <link rel="stylesheet" href="fontstyle.css">
         <title>login</title>
-    </head>
+</head>
 
-    <body>
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
-                    <a class="navbar-brand" style="color: white">
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
+                <a class="navbar-brand" style="color: white">
                         <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                         JustFang
-                    </a>
-            </nav>
-            <div class="card" style="width: Responsive;">
-                    <img class="card-img-top" src="pic/hotel.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                            <form action="login.php" method="post" >
-                                    <div class="form-group">
-                                      <label for="inputusername">Username</label>
-                                      <input type="username" name="user" required class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">  
-                                    </div>
+                </a>
+        </nav>
+        <div class="card" style="width: Responsive;">
+                <img class="card-img-top" src="pic/hotel.jpeg" alt="Card image cap">
+                <div class="card-body">
+                        <form action="login.php" method="post">
+                                <div class="form-group">
+                                        <label for="inputusername">Username</label>
+                                        <input type="username" name="user" required class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">
+                                </div>
 
-                                    <div class="form-group">
-                                      <label for="InputPassword">Password</label>
-                                      <input type="password" name="pass" required class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <button type="submit" name="btn" value="member" class="btn btn-outline-primary" aria-pressed="true">LOG IN</button>
-                                    <button type="submit" name="btn" value="guest" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
-                            
-                                    
-                                  </form>
-                    </div>
-            </div>
-            <?php
-            session_start();
-                if(isset($_POST['btn'])){
-                        if($_POST['btn']=='member')
-                        {
-                                $_SESSION['href']='#';
+                                <div class="form-group">
+                                        <label for="InputPassword">Password</label>
+                                        <input type="password" name="pass" required class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <button type="submit" name="btn" value="member" class="btn btn-outline-primary" aria-pressed="true">LOG IN</button>
+                                <button type="submit" name="btn" value="guest" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
+
+
+                        </form>
+                </div>
+                <?php
+                session_start();
+                if (isset($_POST['btn'])) {
+                        if ($_POST['btn'] == 'member') {
+                                $_SESSION['href'] = '#';
                                 require 'verify.php';
-                        }else{
-                                $_SESSION['message']="Log in";
-                                $_SESSION['href']='login.php';
+                        } else {
+                                $_SESSION['message'] = "Log in";
+                                $_SESSION['href'] = 'login.php';
                                 header("Location: welcome.php");
                         }
                 }
 
                 ?>
-    </body>
+        </div>
+
+</body>
+
 </html>
