@@ -11,7 +11,7 @@
     <div class="container">
     <body>
         <h3>Booking Form<br></h3>
-        <form action="#" method="get">
+        
         <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
                 <option selected value="">Hotel</option>
@@ -23,17 +23,16 @@
                 }
                 ?>
             </select><br><br>
-        </form>
+        
         Check-In Date : <input id="cid" type="date" name="cidate" onChange = "show()">
         Check-Out Date : <input id="cod" type="date" name="codate" onChange = "show()">
         
         <p id="demo"></p>
-
         <Script>
             var night = new Date(night);
             function show() {
-                const x = new Date(document.getElementById("cid").value);
-                const y = new Date(document.getElementById("cod").value);
+                var x = new Date(document.getElementById("cid").value);
+                var y = new Date(document.getElementById("cod").value);
                 night = (y-x)/(360*24*10000);
                 if(night>0)
                     document.getElementById("demo").innerHTML = night + " Night(s)";
@@ -42,8 +41,9 @@
             }
         </Script>
 
-    <br>
-    
+        <label for="discode">Discount Code</label>
+        <input type="discountcode" name="disc" required class="form-control" id="discode" aria-describedby="discountHelp" placeholder="Enter Discount Code">
+        <button type="submit" name="checkdis" value="discount" class="btn btn-outline-primary" aria-pressed="true">Check</button>
     </body>
     </div>
 </html>
