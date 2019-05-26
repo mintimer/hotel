@@ -107,7 +107,7 @@
                 <button type="submit" class="btn btn btn-info">Select</button>
             </form>
             <br>
-            <table class="table table-striped">
+            <table class="invisible" id="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>RoomID</th>

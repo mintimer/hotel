@@ -105,7 +105,7 @@
             <button type="submit" class="btn btn-info">Select</button>
             </form>
 
-                <table class="table table-striped">
+            <table class="invisible" id="table">
                     <thead class="thead-dark">
                         <tr>
                             <th>First Name</th>
