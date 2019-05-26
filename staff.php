@@ -80,4 +80,5 @@
 
             <img class="card-img-top" src="pic/hotel5.jpeg" alt="Card image cap" style="margin: -21.5% 0;">
     </body>
+    <?php mysqli_close($con);?>
 </html>
