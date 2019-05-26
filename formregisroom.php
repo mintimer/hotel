@@ -163,7 +163,7 @@
                     $price = $_GET['price'];
                 }
                 $canbecel = $_GET['cancel'];
-
+                $id =  $hotel . $roomtype . $roomnumber;
                 if (!$roomtype) {
                     $ticket = 1;
                 } else {
@@ -181,14 +181,26 @@
         </form>
 
         <?php
-        if ($ticket == 2) {
-            echo
-                '<div class="row">
+        $sql = "SELECT * FROM roominfo WHERE RoomID = '$id'";
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($result);
+
+
+        if ($row==NULL) {
+            if ($ticket == 2) {
+                echo
+                    '
+                    <div class="alert alert-success" role="alert">You can add this room by click submit button.</div>
+                     <div class="row">
                     <div class="col-md">
                 <button type="submit" class="btn btn-success" onclick="sendfunction()">Submit</button>
                 </div>
                 </div>';
+            }
+        } else {
+            echo '<div class="alert alert-warning" role="alert">This room is already exist. Please add new information.</div>';
         }
+
 
         ?>
         <p id="sent"></p>
@@ -261,7 +273,6 @@
             document.getElementById("sent").innerHTML =
                 "<?php
                     include('connect.php');
-                    $id =  $hotel . $roomtype . $roomnumber;
                     //echo $hotel."   ";
                     //echo $id."   ";
                     //echo $price."   ";
