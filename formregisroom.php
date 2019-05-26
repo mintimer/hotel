@@ -43,9 +43,7 @@
             <div class="form-row">
                 <div class="col">
                     <label for="validationRoomNumber">Room Number</label>
-                    <input type="text"  id="validationRoomNumber" class="form-control is-invalid" 
-                    placeholder="Enter Room Number" name=roomnumber pattern="[0-9]{3}" maxlength="3" minlength="3" required
-                    onchange="roomnumbervalidate()" value="<?php if (isset($_GET['roomnumber'])) echo $_GET['roomnumber']; ?>">
+                    <input type="text" id="validationRoomNumber" class="form-control is-invalid" placeholder="Enter Room Number" name=roomnumber pattern="[0-9]{3}" maxlength="3" minlength="3" required onchange="roomnumbervalidate()" value="<?php if (isset($_GET['roomnumber'])) echo $_GET['roomnumber']; ?>">
                 </div>
                 <div class="col">
                     <label for="validationRoomType">Room Type</label>
@@ -134,23 +132,6 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <br>
             <?php
             if ($ticket == 1) {
@@ -175,9 +156,6 @@
                 else if ($temp1 == 'Suite') $roomtype = 'SUT';
                 else if ($temp1 == 'Superior') $roomtype = 'SPR';
 
-
-
-
                 $currency = $_GET['currency'];
                 if ($currency == "USD") {
                     $price = $_GET['price'] * 30;
@@ -199,14 +177,7 @@
                 echo '<tr><td>Can Be Cancel</td><td>' . $canbecel . '</td>';
                 echo ' </tbody> </table>';
             }
-
-
             ?>
-
-
-
-
-
         </form>
 
         <?php
@@ -223,15 +194,8 @@
         <p id="sent"></p>
         <br>
 
-
-
-
-
-
-
-
         </tbody>
-    </table> 
+        </table>
     </div>
     <script>
         <?php
@@ -255,41 +219,39 @@
         function pricevalidate() {
             if (document.getElementById("validationRoomPrice").value) {
                 document.getElementById("validationRoomPrice").className = "form-control is-valid";
-            }
-            else {
+            } else {
                 document.getElementById("validationRoomPrice").className = "form-control is-invalid";
             }
         }
+
         function roomnumbervalidate() {
             if (document.getElementById("validationRoomNumber").value) {
                 document.getElementById("validationRoomNumber").className = "form-control is-valid";
-            }
-            else {
+            } else {
                 document.getElementById("validationRoomNumber").className = "form-control is-invalid";
             }
         }
-        
+
         function hotelvalidate() {
             if (document.getElementById("validationHotel").value) {
                 document.getElementById("validationHotel").className = "custom-select is-valid";
-            }
-            else {
+            } else {
                 document.getElementById("validationHotel").className = "custom-select is-invalid";
             }
         }
+
         function roomtypevalidate() {
             if (document.getElementById("validationRoomType").value) {
                 document.getElementById("validationRoomType").className = "custom-select is-valid";
-            }
-            else {
+            } else {
                 document.getElementById("validationRoomType").className = "custom-select is-invalid";
             }
         }
+
         function currencyvalidate() {
             if (document.getElementById("validationRoomCurrency").value) {
                 document.getElementById("validationRoomCurrency").className = "custom-select is-valid";
-            }
-            else {
+            } else {
                 document.getElementById("validationRoomCurrency").className = "custom-select is-invalid";
             }
         }
@@ -299,29 +261,19 @@
             document.getElementById("sent").innerHTML =
                 "<?php
                     include('connect.php');
-                    //echo $hotel."   ";
                     $id =  $hotel . $roomtype . $roomnumber;
+                    //echo $hotel."   ";
                     //echo $id."   ";
                     //echo $price."   ";
                     //echo $canbecel."   ";
-                     $sql = "INSERT INTO roominfo (RoomID, BranchNo, RoomType, CanBeCancel, RoomPrice)
+                    $sql = "INSERT INTO roominfo (RoomID, BranchNo, RoomType, CanBeCancel, RoomPrice)
                      VALUES ('$id', '$hotel', '$temp1', '$canbecel', '$price')";
-                    if (!mysqli_query($con,$sql)) {
+                    if (!mysqli_query($con, $sql)) {
                         echo "ERROR";
-                        }
-                        else echo "1 record added";
+                    } else echo "1 record added";
                     mysqli_close($con);
                     //echo 'add';
                     ?>";
-
-
-
-
-
-
-
-
-
         }
     </script>
 </body>
