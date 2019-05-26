@@ -99,7 +99,7 @@
                 </select>
 
             <label for="customRange2">Amount of member</label>
-            <input type="range" class="custom-range" min="1" max="50" id="customRange2" name=range>
+             <input type="range" class="custom-range" min="0" max="10" id="customRange2" name="range">
             <p>Value: <span id="demo"></span></p>
 
             <button type="submit" class="btn btn-info">Select</button>
@@ -137,14 +137,18 @@
                 <br>
             </div>
             <script>
-                var slider = document.getElementById("customRange2");
-                var output = document.getElementById("demo");
-                output.innerHTML = slider.value;
-
-                slider.oninput = function() {
-                output.innerHTML = this.value;
-                }
-            </script>
+        var slider = document.getElementById("customRange2");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+        <?php
+        if (isset($_GET['range']))
+        if($_GET['range']!="")
+            echo 'document.getElementById("table").className = "table table-striped";';
+        ?>
+    </script>
     </body>
     <?php mysqli_close($con); ?>
 
