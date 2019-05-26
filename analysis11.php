@@ -94,7 +94,7 @@
 
     
 
-            <table class="invisible" id="table">
+            <table class="table table-striped" id="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>Year</th>

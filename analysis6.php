@@ -22,7 +22,12 @@
     </style>
     </head>
 
-    <body class="bgstaffreport"> 
+    <body style="
+    background-image: url('pic/hotel9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Prompt', sans-serif;"> 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
             <a class="navbar-brand" style="color: white">
                 <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -99,7 +104,7 @@
                 </select>
 
             <label for="customRange2">Amount of member</label>
-             <input type="range" class="custom-range" min="0" max="10" id="customRange2" name="range">
+             <input type="range" class="custom-range" min="0" max="50" id="customRange2" name="range">
             <p>Value: <span id="demo"></span></p>
 
             <button type="submit" class="btn btn-info">Select</button>

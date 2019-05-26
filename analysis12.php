@@ -142,6 +142,13 @@
             </table>
             <br>
         </div>
+        <script>
+        <?php
+        if (isset($_GET['branch']))
+        if($_GET['branch']!="")
+            echo 'document.getElementById("table").className = "table table-striped";';
+        ?>
+        </script>
     </body>
     <?php mysqli_close($con); ?>
 
