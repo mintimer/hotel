@@ -25,7 +25,7 @@
                  WHERE rt.RoomType = "."'".$_SESSION['roomtype']."'";
         mysqli_query($con, $sql3);
         echo "Rating average updated"."<br>";
-
+        header("Location: review_form.php");
 
     ?>
 </body>

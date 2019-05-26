@@ -145,38 +145,29 @@
                 }
             </style>
 
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
                 $(':radio').change(function() {
                     console.log('New star rating: ' + this.value);
                 });
-            </script>
+            </script> -->
 
         <div <?php if (!isset($_POST['roomid'])) {
                         echo "style=" . "visibility" . ": hidden";}?>>
                 <b>Comment</b><br>
                     <textarea class="form-control" type="textarea" name="comment" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
                 <!-- <br><input type="button" onclick="dialog()" value="submit"> -->
-                <br><input type="submit" value="submit">
-                <!-- onclick="dialog()" -->
+                <br><input type="submit" onclick="dialog()" value="submit">
             </div>
-                <?php
-                    if(isset($_POST['comment'])){
-                        $comment = $_POST['comment'];
-                    }else{
-                        $comment = "Nothing";
-                    }
-                ?>
-                
-            <script>
+               
+            <script>  
                     function dialog() {
-                        var comment="<?php echo $comment ?>";
                         Swal.fire({
                             position: 'top',
                             type: 'success',
-                            title: 'Your work has been saved: '+comment,
-                            showConfirmButton: true,
+                            title: 'Your review has been saved',
+                            showConfirmButton: true
                         })
-                    
+
                     }
             </script>
         </form>
