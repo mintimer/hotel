@@ -29,9 +29,9 @@
               <h1 class="font-weight-light" style="font-size:80px;">Welcome to</h1>
               <p class="lead" style="font-size:30px;">JustFang Hotel & Resort</p>
               <form>
-                <button type="submit" formaction ="staff.php" class="btn btn-light btn-lg btn-block">Staff</button> 
+                <a href ="staff.php" class="btn btn-light btn-lg btn-block">Staff</a> 
                 <br>
-                <button type="submit" formaction ="login.php" class="btn btn-light btn-lg btn-block">Customer</button>
+                <a href ="login.php" class="btn btn-light btn-lg btn-block">Customer</a>
               </form>
               <section class="py-100">
 
