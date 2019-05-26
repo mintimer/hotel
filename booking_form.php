@@ -63,6 +63,8 @@
                 }
             </script>
 
+        <p>Amount of Guest</p>
+
     </body>
     </div>
 </html>

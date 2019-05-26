@@ -71,4 +71,5 @@
 
             <img class="card-img-top" src="pic/hotel2.jpeg" alt="Card image cap">
     </body>
+    <?php mysqli_close($con);?>
 </html>
