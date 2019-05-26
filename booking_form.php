@@ -41,15 +41,28 @@
             }
         </Script>
 
-        <label for="discode">Discount Code</label>
-        <input type="discountcode" name="disc" required class="form-control" id="discode" aria-describedby="discountHelp" placeholder="Enter Discount Code">
-        <button type="submit" name="checkdis" value="discount" class="btn btn-outline-primary" aria-pressed="true" onClick="show2()">Check</button>
-        <p id="demo2"></p>
-        <script>
-            function show2(){
-                var x = document.getElementById("discode").value; 
-            }
-        </script>
+        <label for="discode">Discount Code <span id="percent"></span></label>
+        <form>
+            <input type="discountcode" name="disc" required class="form-control" id="discode" aria-describedby="discountHelp" placeholder="Enter Discount Code" onkeyup="show2(this.value)">
+        </form>
+            <script>
+                function show2(str) {
+                    if (str.length == 0) { 
+                        document.getElementById("percent").innerHTML = "";
+                        return;
+                    } else {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("percent").innerHTML = this.responseText;
+                            }
+                        }
+                        xmlhttp.open("GET", "checkdiscode.php?q="+str, true);
+                        xmlhttp.send();
+                    }
+                }
+            </script>
+
     </body>
     </div>
 </html>
