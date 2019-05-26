@@ -31,7 +31,7 @@
                 $_SESSION['bName'] = NULL;
                 $_SESSION['bCountry'] = NULL;
             }
-            $sql = "SELECT ri.RoomID, ri.RoomType, bri.BranchName, bri.BranchCountry
+            $sql = "SELECT ri.RoomID, ri.RoomType, bri.BranchName, bri.BranchCountry, bi.BookingNo
                     FROM roominfo ri
                     INNER JOIN 	branchinfo bri ON ri.BranchNo = bri.BranchNo
                     INNER JOIN bookingroom br ON ri.RoomID = br.RoomID
@@ -44,6 +44,7 @@
                     $_SESSION['roomtype'] = $row['RoomType'];
                     $_SESSION['bName'] = $row['BranchName'];
                     $_SESSION['bCountry'] = $row['BranchCountry'];
+                    $_SESSION['bookingno'] = $row['BookingNo'];
                 } else {
                     echo "<option value='" . $row['RoomID'] . "'>" . $row['RoomType'] . ": " . $row['RoomID'] . "</option>";
                 }
@@ -53,26 +54,16 @@
         <button type="submit" class="btn btn-info">Select</button>
     </form>
 
-    <?php
-            if(isset($_POST['roomid'])){
-                echo $_POST['roomid'];
-                echo $_SESSION['roomtype'];
-                echo $_SESSION['bName'];
-                echo $_SESSION['bCountry'];
-            }
-
-            // while ($row = mysqli_fetch_array($result)) {
-            //     echo $row['BranchCountry']." ".$row['BranchName']."<br>";
-            //     // if($row['Roomtype']==$_POST['roomtype']){
-            //     // }
-            // }
-        
-    ?>
-    <br>
-    <br>
-    <br>
-    <br>
-
+        <?php
+                if(isset($_POST['roomid'])){
+                    echo $_POST['roomid'];
+                    echo $_SESSION['roomtype'];
+                    echo $_SESSION['bName'];
+                    echo $_SESSION['bCountry'];
+                    echo $_SESSION['bookingno'];
+                }
+            
+        ?>
 
     <form action="review_success.php"  method="POST">
         <div <?php if (!isset($_POST['roomid'])) {
@@ -175,6 +166,7 @@
                         $comment = "Nothing";
                     }
                 ?>
+                
             <script>
                     function dialog() {
                         var comment="<?php echo $comment ?>";
