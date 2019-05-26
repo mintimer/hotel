@@ -13,6 +13,7 @@
             echo $namee;
             $_SESSION['namee']=$namee;
             $_SESSION['message'] = "Welcome "." ".$namee['firstname'];
+            $_SESSION['role'] = 'member';
             header("Location: welcome.php");
             
         }else{
