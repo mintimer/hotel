@@ -176,7 +176,7 @@
         }
     </script>
         </form>
-    
+
    <?php mysqli_close($con); ?>
 </body>
 
