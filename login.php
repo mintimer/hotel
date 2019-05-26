@@ -41,11 +41,8 @@
                 session_start();
                 if (isset($_POST['btn'])) {
                         if ($_POST['btn'] == 'member') {
-                                $_SESSION['href'] = '#';
                                 require 'verify.php';
                         } else {
-                                $_SESSION['message'] = "Log in";
-                                $_SESSION['href'] = 'login.php';
                                 $_SESSION['role'] = 'guest';
                                 header("Location: welcome.php");
                         }
