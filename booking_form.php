@@ -36,11 +36,11 @@
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-          <a class="nav-link disable" style="color: #eceaea">HOME</a>
+          <a class="nav-link" href="welcome.php"  style="color:white">HOME</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="booking_form.php" style="color: white">BOOKING</a>
+          <a class="nav-link disable" href="#" style="color: white">BOOKING</a>
         </li>
 
         <li class="nav-item">
