@@ -51,7 +51,12 @@
                         </li>
 
                         <li class="nav-item">
-                          <a class="nav-link " href="review_form.php" style="color:white">Review</a>
+                          <?php 
+                              if($_SESSION['role']=='member')
+                              {
+                                echo "<a class="."nav-link"." href="."review_form.php"." style="."color:white".">Review</a>";
+                              }
+                          ?>
                       </li>
                               
                     </ul>

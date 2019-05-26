@@ -11,7 +11,7 @@
     <div class="container">
     <body>
         <h3>Booking Form<br></h3>
-        
+        <form action="#" method="POST">
         <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
                 <option selected value="">Hotel</option>
@@ -24,8 +24,8 @@
                 ?>
             </select><br><br>
         
-        Check-In Date : <input id="cid" type="date" name="cidate" onChange = "show()">
-        Check-Out Date : <input id="cod" type="date" name="codate" onChange = "show()">
+        Check-In Date* : <input id="cid" type="date" name="cidate" onChange = "show()" required>
+        Check-Out Date* : <input id="cod" type="date" name="codate" onChange = "show()" required>
         
         <p id="demo"></p>
         <Script>
@@ -42,28 +42,33 @@
         </Script>
 
         <label for="discode">Discount Code <span id="percent"></span></label>
-        <form>
-            <input type="discountcode" name="disc" required class="form-control" id="discode" aria-describedby="discountHelp" placeholder="Enter Discount Code" onkeyup="show2(this.value)">
-        </form>
-            <script>
-                function show2(str) {
-                    if (str.length == 0) { 
-                        document.getElementById("percent").innerHTML = "";
-                        return;
-                    } else {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                document.getElementById("percent").innerHTML = this.responseText;
-                            }
+        <input type="discountcode" name="disc" class="form-control" id="discode" placeholder="Enter Discount Code" onkeyup="show2(this.value)">
+        <script>
+            function show2(str) {
+                if (str.length == 0) { 
+                    document.getElementById("percent").innerHTML = "";
+                    return;
+                } else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("percent").innerHTML = this.responseText;
                         }
-                        xmlhttp.open("GET", "checkdiscode.php?q="+str, true);
-                        xmlhttp.send();
                     }
+                    xmlhttp.open("GET", "checkdiscode.php?q="+str, true);
+                    xmlhttp.send();
                 }
-            </script>
-
-        <p>Amount of Guest</p>
+            }
+        </script>
+        <br>
+        <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="GNO">Amount of Guest*</label>
+            <input type="text" name="amoguest" required class="form-control" id="GNO" placeholder="Number">
+        </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <form>
 
     </body>
     </div>
