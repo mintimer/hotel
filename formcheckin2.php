@@ -128,6 +128,7 @@
             <br>
             <?php 
             $lenght = count($roomid);
+            echo $roomid[$i];
             for($i = 0; $i <= $lenght; $i++){
                 echo $roomid[$i];
                 echo $roomtype[$i];
