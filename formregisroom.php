@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <?php include('connect.php');
+    $ticket = 0;
     ?>
     <style>
         table,
@@ -44,7 +45,7 @@
             <div class="form-row">
                 <div class="col">
                     <label for="validationRoomNumber">Room Number (3 Digits Number)</label>
-                    <input type="text" id="validationRoomNumber" class="form-control is-invalid" onchange="roomnumbervalidate()" placeholder="Enter Room Number" name="roomnumber" input pattern="[0-9]{3}" minlength="3" maxlength="3" size="3" required>
+                    <input type="text" id="validationRoomNumber" class="form-control is-invalid" onchange="roomnumbervalidate()" placeholder="Enter Room Number" name="roomnumber" input pattern="[0-9]{3}" minlength="3" maxlength="3" size="3" value="<?php if (isset($_GET['roomnumber'])) echo $_GET['roomnumber']; ?>" required>
                 </div>
                 <div class="col">
                     <label for="validationRoomType">Room Type</label>
@@ -76,8 +77,8 @@
                         <label for="validationcurrency">Currency</label>
                         <select name="currency" id="validationRoomCurrency" class="custom-select is-invalid" required onchange="currencyvalidate()">
                             <option selected value="">Choose currency</option>
-                            <option value='thai'>Baht</option>
-                            <option value='us'>Dollars</option>
+                            <option value='THA'>Baht</option>
+                            <option value='USD'>Dollars</option>
                         </select>
 
                     </div>
@@ -97,44 +98,127 @@
                 </div>
             </div>
 
-            <div class="form-row">
-                <button type="submit" class="btn btn-success">Next</button>
+            <div class="row">
+                <div class="col-md">
+                    <button type="submit" class="btn btn-primary" >Next</button>
+                </div>
             </div>
 
-        </form>
-        <br>
 
 
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="2">Detail</th>
-                </tr>
-            </thead>
-            <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <br>                   
+            <table class="invisible" id="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="2">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    error_reporting(0);
+                    $hotel = $_GET['branch'];
+                    $sql = "SELECT BranchName FROM branchinfo WHERE BranchNo = '$hotel'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $roomnumber = $_GET['roomnumber'];
+                    $roomtype = $_GET['roomtype'];
+
+
+
+                    $currency = $_GET['currency'];
+                    if ($currency = "USD") {
+                        $price = $_GET['price'] * 30;
+                    } else {
+                        $price = $_GET['price'];
+                    }
+                    $canbecel = $_GET['cancel'];
+
+                    if (!$roomtype) {
+                        $ticket = 1;
+                    } else {
+                        $ticket = 2;
+                    }
+
+                    echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
+                    echo '<tr><td>Hotel</td><td>' . $row['BranchName'] . '</td>';
+                    echo '<tr><td>RoomID</td><td>' . $hotel . $roomtype . $roomnumber . '</td>';
+                    echo '<tr><td>Price in Baht</td><td>' . $price . '</td>';
+                    echo '<tr><td>Can Be Cancel</td><td>' . $canbecel . '</td>';
+
+                    ?>
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
                 <?php
-                $hotel = $_GET['branch'];
-                $roomnumber = $_GET['roomnumber'];
-                $roomtype = $_GET['roomtype'];
-                $price = $_GET['price'];
-                $currency = $_GET['currency'];
-                $canbecel = $_GET['cancel'];
-
-                echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
-                echo '<tr><td>Hotel</td><td>' . $hotel . '</td>';
-                echo '<tr><td>RoomID</td><td>' . $hotel . $roomtype . $roomnumber . '</td>';
-                echo '<tr><td>Price</td><td>' . $price . '</td>';
-                echo '<tr><td>Can Be Cancel</td><td>' . $canbecel . '</td>';
-
+                if ($ticket == 2) {
+                    echo
+                        '<div class="row">
+                        <div class="col-md">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                    </div>';
+                }
                 ?>
+           
+    </div>
+    </form>
+    <br>
 
 
-            </tbody>
-        </table>
+
+
+
+
 
 
     </div>
     <script>
+        <?php
+        if (isset($_GET['roomnumber']))
+            echo 'document.getElementById("validationRoomNumber").className = "form-control is-valid";
+            document.getElementById("table").className = "table table-striped";';
+        ?>
+
         function pricevalidate() {
             if (document.getElementById("validationRoomPrice").value) {
                 document.getElementById("validationRoomPrice").className = "form-control is-valid";
@@ -176,6 +260,7 @@
             }
 
         }
+       
     </script>
 </body>
 <?php mysqli_close($con); ?>
