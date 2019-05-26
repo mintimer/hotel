@@ -77,7 +77,9 @@
                     echo '<td>' . $row['GuestName'] . '</td>';
                     echo '<td>' . $row['BookingNo'] . '</td>';
                     echo '<td>' . $row['RoomID'] . '</td>';
-                    echo '<td>' . $row['KeyStatus'] . '</td>';
+                    if($row['KeyStatus']==0)       echo '<td><font color="red">Not get Key</font></td>';
+                    else if($row['KeyStatus']==1)  echo '<td><font color="blue">Got key</font></td>';
+                    else if($row['KeyStatus']==2)  echo '<td><font color="green">Returned key</font></td>';
                     echo '</tr>';
                 }
 
