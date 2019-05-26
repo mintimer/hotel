@@ -45,7 +45,7 @@
                     <label for="validationRoomNumber">Room Number</label>
                     <input type="text"  id="validationRoomNumber" class="form-control is-invalid" 
                     placeholder="Enter Room Number" name=roomnumber pattern="[0-9]{3}" maxlength="3" minlength="3" required
-                    onchange="roomnumbervalidate()">
+                    onchange="roomnumbervalidate()" value="<?php if (isset($_GET['roomnumber'])) echo $_GET['roomnumber']; ?>">
                 </div>
                 <div class="col">
                     <label for="validationRoomType">Room Type</label>
@@ -299,19 +299,19 @@
             document.getElementById("sent").innerHTML =
                 "<?php
                     include('connect.php');
-                    // echo $hotel."   ";
-                    // $id =  $hotel . $roomtype . $roomnumber;
-                    // echo $id."   ";
-                    // echo $price."   ";
-                    // echo $canbecel."   ";
+                    //echo $hotel."   ";
+                    $id =  $hotel . $roomtype . $roomnumber;
+                    //echo $id."   ";
+                    //echo $price."   ";
+                    //echo $canbecel."   ";
                      $sql = "INSERT INTO roominfo (RoomID, BranchNo, RoomType, CanBeCancel, RoomPrice)
                      VALUES ('$id', '$hotel', '$temp1', '$canbecel', '$price')";
-                    // if (!mysqli_query($con,$sql)) {
-                    //     echo "ERROR";
-                    //     }
-                    //     else echo "1 record added";
-                    // mysqli_close($con);
-                    echo 'add';
+                    if (!mysqli_query($con,$sql)) {
+                        echo "ERROR";
+                        }
+                        else echo "1 record added";
+                    mysqli_close($con);
+                    //echo 'add';
                     ?>";
 
 
