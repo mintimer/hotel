@@ -43,7 +43,9 @@
             <div class="form-row">
                 <div class="col">
                     <label for="validationRoomNumber">Room Number</label>
-                    <input type="text" id="validationRoomNumber" class="form-control" placeholder="Enter Room Number" name=roomnumber required>
+                    <input type="text"  id="validationRoomNumber" class="form-control is-invalid" 
+                    placeholder="Enter Room Number" name=roomnumber pattern="[0-9]{3}" maxlength="3" minlength="3" required
+                    onchange="roomnumbervalidate()">
                 </div>
                 <div class="col">
                     <label for="validationRoomType">Room Type</label>
@@ -256,6 +258,39 @@
             }
             else {
                 document.getElementById("validationRoomPrice").className = "form-control is-invalid";
+            }
+        }
+        function roomnumbervalidate() {
+            if (document.getElementById("validationRoomNumber").value) {
+                document.getElementById("validationRoomNumber").className = "form-control is-valid";
+            }
+            else {
+                document.getElementById("validationRoomNumber").className = "form-control is-invalid";
+            }
+        }
+        
+        function hotelvalidate() {
+            if (document.getElementById("validationHotel").value) {
+                document.getElementById("validationHotel").className = "custom-select is-valid";
+            }
+            else {
+                document.getElementById("validationHotel").className = "custom-select is-invalid";
+            }
+        }
+        function roomtypevalidate() {
+            if (document.getElementById("validationRoomType").value) {
+                document.getElementById("validationRoomType").className = "custom-select is-valid";
+            }
+            else {
+                document.getElementById("validationRoomType").className = "custom-select is-invalid";
+            }
+        }
+        function currencyvalidate() {
+            if (document.getElementById("validationRoomCurrency").value) {
+                document.getElementById("validationRoomCurrency").className = "custom-select is-valid";
+            }
+            else {
+                document.getElementById("validationRoomCurrency").className = "custom-select is-invalid";
             }
         }
 
