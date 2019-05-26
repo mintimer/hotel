@@ -19,10 +19,16 @@
         th {
             text-align: center;
         }
+
     </style>
     </head>
 
-    <body class="bgstaffreport"> 
+    <body style="
+    background-image: url('pic/hotel9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Prompt', sans-serif;"> 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
             <a class="navbar-brand" style="color: white">
                 <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
