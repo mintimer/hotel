@@ -12,7 +12,7 @@
   <title>JustFang Hotel</title>
 </head>
 
-<body>
+<body class="fontstyle">
   <?php session_start(); ?>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
     <a class="navbar-brand" style="color: white">
@@ -31,25 +31,14 @@
           <a class="nav-link disable" style="color: #eceaea">HOME</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            FIND A HOTEL
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="kmutt.html">KMUTT</a>
-            <a class="dropdown-item" href="#">KMITL</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="booking_form.php" style="color: white">BOOKING</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            PROMOTION
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">SUMMER 2019</a>
-            <a class="dropdown-item" href="#">STUDENT</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: white">PROMOTION</a>
         </li>
+
 
         <li class="nav-item">
           <?php
