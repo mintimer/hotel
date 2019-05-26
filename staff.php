@@ -29,10 +29,16 @@
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" style="color: #eceaea">HOME</a>
                         </li>
-
-                        <li class="nav-item">
-                          <a class="nav-link " href="#" style="color:white">Check in</a>
-                      </li>
+                        
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Check in
+                             </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Check in form</a>
+                                  <a class="dropdown-item" href="#">View Check in</a>
+                                </div>
+                        </li>
 
                         <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
