@@ -179,7 +179,6 @@
             }
             ?>
         </form>
-
         <?php
         $sql = "SELECT * FROM roominfo WHERE RoomID = '$id'";
         $result = mysqli_query($con, $sql);
@@ -286,6 +285,7 @@
                     //echo 'add';
                     ?>";
         }
+        $('.alert').alert()
     </script>
 </body>
 <?php mysqli_close($con); ?>
