@@ -108,7 +108,7 @@
                 <button type="submit" class="btn btn btn-info">Select</button>
             </form>
             <br>
-            <table class="table table-striped">
+            <table class="invisible" id="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>BranchNo</th>
@@ -156,6 +156,13 @@
             </table>
             <br>
         </div>
+        <script>
+        <?php
+        if (isset($_GET['branch']))
+        if($_GET['branch']!="")
+            echo 'document.getElementById("table").className = "table table-striped";';
+        ?>
+        </script>
     </body>
     <?php mysqli_close($con);?>
 </html>
