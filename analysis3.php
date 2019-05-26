@@ -45,7 +45,7 @@
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="#">Check in form</a>
-                                  <a class="dropdown-item" href="#">View Check in</a>
+                                  <a class="dropdown-item" href="viewcheckin.php">View Check in</a>
                                 </div>
                         </li>
 

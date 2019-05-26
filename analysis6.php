@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -22,12 +23,7 @@
     </style>
     </head>
 
-    <body style="
-    background-image: url('pic/hotel9.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: 'Prompt', sans-serif;"> 
+    <body class="bgstaffreport"> 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
             <a class="navbar-brand" style="color: white">
                 <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -50,7 +46,7 @@
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="#">Check in form</a>
-                                  <a class="dropdown-item" href="#">View Check in</a>
+                                  <a class="dropdown-item" href="viewcheckin.php">View Check in</a>
                                 </div>
                         </li>
 
@@ -73,8 +69,8 @@
                             <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
                             <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
                             <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
-                            <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
-                            <a class="dropdown-item disabled" href="#">Member Score</a>
+                            <a class="dropdown-item disabled" href="#">Profit Of Each Branch</a>
+                            <a class="dropdown-item" href="analysis6.php">Member Score</a>
                             <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
                             <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
                             <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>
