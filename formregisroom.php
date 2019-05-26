@@ -18,7 +18,8 @@
 
         <form id="form1" action="#" method="get">
             <label for="validationHotel">Select Hotel</label>
-            <select name="branch" id="validationHotel" class="custom-select is-invalid" required onchange="hotelvalidate()">
+            <select name="branch" id="validationHotel" class="custom-select is-invalid" 
+            required onchange="hotelvalidate()">
 
                 <?php
                 if (isset($_GET['branch'])) {
@@ -197,6 +198,7 @@
                 </div>';
             }
         } else {
+            if ($ticket == 2)
             echo '<div class="alert alert-warning" role="alert">This room is already exist. Please add new information.</div>';
         }
 
