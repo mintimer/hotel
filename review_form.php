@@ -30,7 +30,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link disable" href="#" style="color: #eceaea">BOOKING</a>
+          <a class="nav-link" href="booking_from.php" style="color: white">BOOKING</a>
         </li>
 
         <li class="nav-item">
@@ -41,7 +41,7 @@
         <li class="nav-item">
           <?php
           if ($_SESSION['role'] == 'member') {
-            echo "<a class=" . "nav-link" . " href=" . "review_form.php" . " style=" . "color:white" . ">Review</a>";
+            echo "<a class=" . "nav-link" . " href=#" . "review_form.php" . " style=" . "color:#eceaea" . ">Review</a>";
           }
           ?>
         </li>
