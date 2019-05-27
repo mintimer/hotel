@@ -15,7 +15,6 @@
        // echo $food;
        echo "rt: ".$_POST['roomtype']."<br>";
        // echo $_POST['guest'];
-       if (isset($_POST['add'])) {
                $sql = "SELECT RoomID
                                 FROM roominfo
                                 WHERE RoomID NOT IN (SELECT RoomID 
@@ -31,13 +30,8 @@
                                                     echo "Rid: ".$rid;
                                                     
                                                     
-                                                    $sql2 = "INSERT INTO bookingroom
-                                  VALUES('.$rid.','.$bno.','.$gno.','.$addbed.','.$food.')";
+                                                    $sql2 = "INSERT INTO bookingroom VALUES('".$rid."','".$bno."','".$gno."','".$addbed."','".$food."')";
                         mysqli_query($con,$sql2) or die("Error: ".mysqli_error($con));
-
-                }
-       
-        
         ?>
 </body>
 

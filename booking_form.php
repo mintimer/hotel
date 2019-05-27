@@ -206,14 +206,17 @@
                         $sql = "SELECT max(GuestID) as max FROM Guestinfo";
                         $result=mysqli_query($con,$sql);
                         $row=mysqli_fetch_array($result);
-                        $gg=$row['max']+1;
+                        $sql = "SELECT UserID FROM memberinfo WHERE Username = '".$_SESSION['uid']."';";
+                        $result=mysqli_query($con,$sql);
+                        $row=mysqli_fetch_array($result);
+                        $uid = $row['UserID'];
                         if($role=='Yes'){
-                            $uid = "'".$_SESSION['uid']."'";
+                            $uid = "'".$uid."'";
                             $gid = "NULL";
                         }
                         else if($role=='No'){
                             $uid = "NULL";
-                            $gid = "'".$gg."'";
+                            $gid = "'".$row['max']."'";
                         }
                         $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',".$gid.",".$uid.",NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
                         echo $sql;
