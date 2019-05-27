@@ -172,13 +172,13 @@
                         if(strlen($_POST["disc"])!=0)
                             $code = "'".$_POST["disc"]."'";
                         else $code = "NULL";
-                        if (strlen($code) == 0)
+                        if (strlen($_POST["disc"]) == 0)
                             $percent = 0;
                         else
                             $percent = $_SESSION['percent'];
                         if ($night <= 0 || $cidate < $now)
                             echo "<span style=" . "color:red" . ">Please select the correct date.<span>";
-                        else if ($percent <= 0 && strlen($code) > 0)
+                        else if ($percent <= 0 && strlen($_POST["disc"]) > 0)
                             echo "<span style=" . "color:red" . ">Incorrect discount code.<span>";
                         else $success = 1;
                         $sql = "SELECT max(GuestID) as max FROM Guestinfo";
