@@ -32,7 +32,11 @@
                                                     
                                                     $sql2 = "INSERT INTO bookingroom VALUES('".$rid."','".$bno."','".$gno."','".$addbed."','".$food."')";
                         mysqli_query($con,$sql2) or die("Error: ".mysqli_error($con));
+        header("Location: booking_form.php#addmore");
         ?>
+        <form action="booking_form.php" method="post" >
+                <input type="hidden" name="">
+        </form>
 </body>
 
 </html>

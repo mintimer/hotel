@@ -152,28 +152,6 @@
                     }
                 </script>
                 <br>
-                <!-- <div class="form-row">
-        <div class="form-group col-md-2">
-            <label for="exampleFormControlSelect1">Amount of Guest*</label>
-            <select name="amo" class="form-control" id="exampleFormControlSelect1" required>
-                <?php
-                // if(isset($_POST['amo'])) 
-                // echo '<option value='.$_POST['amo'].'>'.$_POST['amo'].'</option>'; 
-                ?>
-                <option value="">---</option>
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-                <option value=4>4</option>
-                <option value=5>5</option>
-                <option value=6>6</option>
-                <option value=7>7</option>
-                <option value=8>8</option>
-                <option value=9>9</option>
-                <option value=10>10</option>
-            </select>
-        </div>
-        </div> -->
                 <?php
                 if (!isset($_POST['next']) || !isset($success))
                     echo '<input class="btn btn-info" name="next" type="submit" value="Next">';
@@ -219,50 +197,11 @@
                             $gid = "'".$row['max']."'";
                         }
                         $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',".$gid.",".$uid.",NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
-                        echo $sql;
                         mysqli_query($con,$sql) or die(mysqli_error($con));
                         
                     }
+                    if($success!=0) require 'addmoreroom.php';
                     ?>
-
-                    <form class="form-control" method="POST">
-                        <div <?php if ($success == 0) echo "style=" . "visibility" . ": hidden"; ?>>
-                            <?php
-                            if ($success == 1) {
-                                $sql = 'SELECT * FROM Roomtype';
-                                $result = mysqli_query($con, $sql);
-                                $roomtype[] = '';
-                                $x = 0;
-                                while ($row = mysqli_fetch_array($result)) {
-                                    $roomtype[$x++] = $row;
-                                }
-                            }
-                            ?>
-                            <label for="rt">Roomtype</label>
-                            <select name="roomtype" id='rt' class="form-control">
-                                <?php
-                                for ($i = 0; $i < 4; $i++)
-                                    echo '<option value="' . $roomtype[$i]["RoomType"] . '">' . $roomtype[$i]["RoomType"] . '</option>';
-                                ?>
-                            </select>
-                            <label for="gt">guest</label>
-                            <select name="guest" id='gt' class="form-control">
-                                <?php
-                                for ($i = 1; $i <= 9; $i++)
-                                    echo '<option value="' . $i . '">' . $i . '</option>';
-                                ?>
-                            </select>
-                            <input class="form-check-input" name="ab" type="checkbox" value="yes" id="adbed">
-                            <label class="form-check-label" for="adbed">Additions Bed</label>
-                            <br>
-                            <input class="form-check-input" name="fd" type="checkbox" value="yes" id="food">
-                            <label class="form-check-label" for="food">Food</label>
-                            <br>
-                            <!-- <input class="btn btn-info" name="add" type="submit" value="Add"> -->
-                            <input type="hidden" name="bookno" value="<?php echo $bno ?>">
-                            <button formaction="test.php" class="btn btn-info" name="add" type="submit" value="Add">ADD</button>
-                        </div>
-                    </form>
 
                     
             </div>
