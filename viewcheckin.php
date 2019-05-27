@@ -41,11 +41,12 @@
 
                     <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Check in
+                                  Check in / Check out
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Check in form</a>
-                                  <a class="dropdown-item disabled" href="#">View Check in</a>
+                                  <a class="dropdown-item" href="formcheckin1.php">Check in form</a>
+                                  <a class="dropdown-item" href="#">Check out form</a>
+                                  <a class="dropdown-item disabled" href="#">View Check in / Check out</a>
                                 </div>
                         </li>
 

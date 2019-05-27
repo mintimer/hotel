@@ -42,11 +42,12 @@
 
                     <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Check in
+                                  Check in / Check out
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Check in form</a>
-                                  <a class="dropdown-item" href="viewcheckin.php">View Check in</a>
+                                  <a class="dropdown-item" href="formcheckin1.php">Check in form</a>
+                                  <a class="dropdown-item" href="#">Check out form</a>
+                                  <a class="dropdown-item" href="viewcheckin.php">View Check in / Check out</a>
                                 </div>
                         </li>
 
@@ -69,8 +70,8 @@
                             <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
                             <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
                             <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
-                            <a class="dropdown-item disabled" href="#">Profit Of Each Branch</a>
-                            <a class="dropdown-item" href="analysis6.php">Member Score</a>
+                            <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
+                            <a class="dropdown-item disabled" href="#">Member Score</a>
                             <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
                             <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
                             <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>

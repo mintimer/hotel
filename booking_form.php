@@ -153,7 +153,7 @@
         </div>
         <?php
             if(!isset($_POST['next']))
-                echo '<input class="btn btn-primary" name="next" type="submit" value="Next">';
+                echo '<input class="btn btn-info" name="next" type="submit" value="Next">';
         ?>
         <form><br>
 
