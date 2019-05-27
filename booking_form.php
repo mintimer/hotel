@@ -206,6 +206,30 @@
                     }
                 }
             ?>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<?php echo $roomtype[0]['RoomType'];?>" id="defaultCheck0">
+                <label class="form-check-label" for="defaultCheck0">
+                <?php echo $roomtype[0]['RoomType'];?>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<?php echo $roomtype[1]['RoomType'];?>" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                <?php echo $roomtype[1]['RoomType'];?>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<?php echo $roomtype[2]['RoomType'];?>" id="defaultCheck2">
+                <label class="form-check-label" for="defaultCheck2">
+                <?php echo $roomtype[2]['RoomType'];?>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<?php echo $roomtype[3]['RoomType'];?>" id="defaultCheck3">
+                <label class="form-check-label" for="defaultCheck3">
+                <?php echo $roomtype[3]['RoomType'];?>
+                </label>
+            </div>
         </div>
         </form>
         <br>
