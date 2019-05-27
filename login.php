@@ -39,7 +39,8 @@
                 </div>
                 <?php
                 session_start();
-                $_SESSION['uid']=$_POST['user'];
+                if(isset($_POST['user']))
+                        $_SESSION['uid']=$_POST['user'];
                 if (isset($_POST['btn'])) {
                         if ($_POST['btn'] == 'member') {
                                 require 'verify.php';
