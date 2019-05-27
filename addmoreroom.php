@@ -80,7 +80,7 @@
             <div style="background-color: powderblue"></div>
                 <div class="container bg-white">
                 <br>
-                    <form class="form-control" method="POST">
+                    <for method="POST">
                             <?php
 
                                 $sql = 'SELECT * FROM Roomtype';
@@ -92,12 +92,38 @@
                                 }
                             ?>
                             <label for="rt">Roomtype</label>
-                            <select name="roomtype" id='rt' class="form-control">
-                                <?php
-                                for ($i = 0; $i < 4; $i++)
-                                    echo '<option value="' . $roomtype[$i]["RoomType"] . '">' . $roomtype[$i]["RoomType"] . '</option>';
-                                ?>
-                            </select>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios0" value="<?php echo $roomtype[0]['RoomType']; ?>" checked>
+                                <label class="form-check-label" for="exampleRadios0">
+                                <?php echo $roomtype[0]['RoomType']; ?>
+                                <br>
+                                <img src="<?php echo $roomtype[0]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="<?php echo $roomtype[1]['RoomType']; ?>">
+                                <label class="form-check-label" for="exampleRadios1">
+                                <?php echo $roomtype[1]['RoomType']; ?>
+                                <br>
+                                <img src="<?php echo $roomtype[1]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="<?php echo $roomtype[2]['RoomType']; ?>">
+                                <label class="form-check-label" for="exampleRadios2">
+                                <?php echo $roomtype[2]['RoomType']; ?>
+                                <br>
+                                <img src="<?php echo $roomtype[2]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="<?php echo $roomtype[3]['RoomType']; ?>">
+                                <label class="form-check-label" for="exampleRadios3">
+                                <?php echo $roomtype[3]['RoomType']; ?>
+                                <br>
+                                <img src="<?php echo $roomtype[3]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
+                                </label>
+                            </div>
                             <label for="gt">guest</label>
                             <select name="guest" id='gt' class="form-control">
                                 <?php
