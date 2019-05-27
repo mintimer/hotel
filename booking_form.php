@@ -45,7 +45,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: white">PROMOTION</a>
+          <a class="nav-link" href="viewdiscount.php" style="color: white">PROMOTION</a>
         </li>
 
 
