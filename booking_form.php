@@ -199,13 +199,10 @@
                 if($success==1){
                     $sql = 'SELECT * FROM Roomtype';
                     $result = mysqli_query($con,$sql);
+                    $roomtype[] = '';
+                    $x = 0;
                     while($row = mysqli_fetch_array($result)){
-                        echo '<div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="'.$row['RoomType'].'" id="Check'.$row['RoomType'].'">
-                                <label class="form-check-label" for="Check'.$row['RoomType'].'">
-                                '.$row['RoomType'].'
-                                </label>
-                            </div>';
+                        $roomtype[$x++] = $row;
                     }
                 }
             ?>
