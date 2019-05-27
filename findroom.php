@@ -89,7 +89,7 @@
         <div class="container bg-light">
             <br>
             <h3>Find Room</h3>
-            <h5 style="background-color: powderblue">ค้นหาห้องพัก</h5>
+            <h5 style="background-color: powderblue">ค้นหาห้องพักที่ยังว่าง</h5>
         
             <div class="container bg-dark text-white">
                 <br>
