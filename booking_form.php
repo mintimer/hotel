@@ -147,12 +147,24 @@
         <br>
         <div class="form-row">
         <div class="form-group col-md-2">
-            <label for="GNO">Amount of Guest*</label>
-            <input type="text" name="amoguest" required class="form-control" id="GNO" value="<?php if(isset($_POST['amoguest'])) echo $_POST['amoguest']; ?>" placeholder="Number"'>
+            <label for="exampleFormControlSelect1">Amount of Guest*</label>
+            <select class="form-control" id="exampleFormControlSelect1" required>
+                <option value="">---</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
         </div>
         </div>
         <?php
-            if(!isset($_POST['next']))
+            if(!isset($_POST['next']) || !isset($success))
                 echo '<input class="btn btn-info" name="next" type="submit" value="Next">';
         ?>
         <form><br>
@@ -181,7 +193,11 @@
         <div>
             <?php
                 if($success==1){
-                    echo 'เก่งจัง';
+                    $sql = 'SELECT * FROM Roomtype';
+                    $result = mysqli_query($con,$sql);
+                    while($row = mysqli_fetch_array($result)){
+                        echo $row['RoomType'].'<br>';
+                    }
                 }
             ?>
         </div>
