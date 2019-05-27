@@ -206,7 +206,11 @@
                         $_SESSION['cidate'] = $_POST['cidate'];
                         $_SESSION['codate'] = $_POST['codate'];
                         $_SESSION['disc'] = $_POST['disc'];
-                        header("Error: addmoreroom.php");
+                        $_SESSION['bno'] = $bno;
+                        $_SESSION['gno'] = $max;
+                        // header("Error: addmoreroom.php");
+                        echo "<script> window.location.replace('/hotel/addmoreroom.php'); </script>";
+                        // echo "yee";
                     }
                     ?>
 
