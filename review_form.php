@@ -10,22 +10,76 @@
     <link rel="stylesheet" href="bgreview.css">
 </head>
 
-<body class="bgbooking">
+<body class="bgreview">
+<?php session_start(); ?>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
+    <a class="navbar-brand" style="color: white">
+      <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      JustFang
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="welcome.php"  style="color:white">HOME</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disable" href="#" style="color: #eceaea">BOOKING</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: white">PROMOTION</a>
+        </li>
+
+
+        <li class="nav-item">
+          <?php
+          if ($_SESSION['role'] == 'member') {
+            echo "<a class=" . "nav-link" . " href=" . "review_form.php" . " style=" . "color:white" . ">Review</a>";
+          }
+          ?>
+        </li>
+
+      </ul>
+      
+      <?php
+        if($_SESSION['role']=='member'){
+          echo "<a class=" ."'nav-link'"." style="."'color: white'".">".$_SESSION['message']."</a>";
+          echo "<a href="."'login.php'". "class="."'btn btn-secondary'".">LOG OUT</a>";
+        }else{
+          echo "<a href="."'login.php'". "class="."'btn btn-light'".">LOG IN</a>";
+        }
+      ?>
+
+    </div>
+  </nav>
+  <br>
+        <div class="container bg-light">
+<br>
     <h3> Rating Service Form</h3>
     <?php
     include('connect.php');
-    session_start();
     $namee = $_SESSION['namee'];
 
     $userID = $namee['userid'];
     $u_firstname = $namee['firstname'];
     $u_lastname = $namee['lastname'];
     ?>
-    <div class="container bg-light" >
+    <div style="background-color: powderblue">
         <?php
         echo "<b>User ID: </b>" . $userID;
         echo " [ " . $u_firstname . " " . $u_lastname . " ]";
         ?>
+    </div>
+    <br>
+        <div class="container bg-white">
+        <br>
         <form action="#" method="POST">
             <b>Select room</b>
             <select required name="roomid" class="form-control">
@@ -56,9 +110,9 @@
                 }
                 ?>
             </select>
+            <br>
             <button type="submit" class="btn btn-info">Select</button>
         </form>
-
             <?php
                     if(isset($_POST['roomid'])){
                         echo "<b>Room ID: </b>".$_POST['roomid']."<br>";
@@ -71,7 +125,7 @@
             ?>
 
         <form action="review_success.php"  method="POST">
-            <div <?php if (!isset($_POST['roomid'])) {
+            <div class="col-12 text-center" <?php if (!isset($_POST['roomid'])) {
                         echo "style=" . "visibility" . ": hidden";
                     } ?>>
                     <div class="rating">
@@ -161,7 +215,10 @@
                     <b>Comment</b><br>
                         <textarea class="form-control" type="textarea" name="comment" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
                     <!-- <br><input type="button" onclick="dialog()" value="submit"> -->
-                    <br><input type="submit" onclick="dialog()" value="submit" class="btn btn-success">
+                    <br>
+                    <div class="col-12 text-center" >
+                    <input type="submit" onclick="dialog()" value="submit" class="btn btn-success">
+                    </div>
                 </div>
                 
                 <script>  
@@ -176,7 +233,11 @@
                         }
                 </script>
             </form>
+        <br>
         </div>
+        <br>
+        </div>
+        <br>
 
    <?php mysqli_close($con); ?>
 </body>
