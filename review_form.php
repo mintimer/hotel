@@ -217,7 +217,7 @@
                     <!-- <br><input type="button" onclick="dialog()" value="submit"> -->
                     <br>
                     <div class="col-12 text-center" >
-                    <input type="button" onclick="dialog()" value="submit" class="btn btn-success">
+                    <button type="submit" onclick="dialog()" value="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
                 
