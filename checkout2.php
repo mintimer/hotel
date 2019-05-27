@@ -214,8 +214,11 @@
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn btn-info">confirm</button>
+            <?php if ($key['KeyStatus'] == 0&&1)
+            echo '<button type="submit" class="btn btn-info">confirm</button>';
+            else echo'<a class="btn btn-primary" href="/checkout1.php" role="button">Back</a>';
 
+            ?>
 
         </form>
 
