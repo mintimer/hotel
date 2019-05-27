@@ -244,7 +244,7 @@
                                 $ticket = 2;
                             }
 
-                            echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
+                            // echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
                             echo '<tr><td>Hotel</td><td>' . $row['BranchName'] . '</td>';
                             echo '<tr><td>RoomID</td><td>' . $hotel . $roomtype . $roomnumber . '</td>';
                             echo '<tr><td>Price in Baht</td><td>' . $price . '</td>';
