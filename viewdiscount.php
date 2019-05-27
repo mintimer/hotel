@@ -42,7 +42,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="booking_from.php" style="color: white">BOOKING</a>
+          <a class="nav-link" href="booking_form.php" style="color: white">BOOKING</a>
         </li>
 
         <li class="nav-item">
