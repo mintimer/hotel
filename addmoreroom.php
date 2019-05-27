@@ -73,13 +73,13 @@
         </div>
     </nav>
     <br>
-        <div id="addmore" name="addmore" class="container bg-light">
+        <div class="container bg-light">
         <br>
         <h3>Adding more room<br></h3>
-        <div class="container bg-light">
             <div style="background-color: powderblue"></div>
+                <div class="container bg-white">
+                <br>
                     <form class="form-control" method="POST">
-                        <div class="container bg-white">
                             <?php
 
                                 $sql = 'SELECT * FROM Roomtype';
@@ -89,7 +89,6 @@
                                 while ($row = mysqli_fetch_array($result)) {
                                     $roomtype[$x++] = $row;
                                 }
-                            
                             ?>
                             <label for="rt">Roomtype</label>
                             <select name="roomtype" id='rt' class="form-control">
@@ -114,9 +113,9 @@
                             <!-- <input class="btn btn-info" name="add" type="submit" value="Add"> -->
                             <input type="hidden" name="bookno" value="<?php echo $bno ?>">
                             <button formaction="test.php" class="btn btn-info" name="add" type="submit" value="Add">ADD</button>
-                        </div>
                     </form>
                 </div>
+            </div>
         </div>
     </body>
 </html>
