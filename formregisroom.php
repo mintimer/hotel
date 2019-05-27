@@ -9,7 +9,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <?php include('connect.php');
         $ticket = 1;?>
-        <link rel="stylesheet" href="bgstaffreport.css">
+        <link rel="stylesheet" href="bgregisroom.css">
         <style>
         table,
         th,
@@ -23,7 +23,7 @@
     </style>
     </head>
 
-    <body class="bgstaffreport"> 
+    <body class="bgregisroom"> 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
             <a class="navbar-brand" style="color: white">
                 <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -56,8 +56,8 @@
                                   Room
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Find Room</a>
-                                  <a class="dropdown-item disabled" href="#">Add New Room</a>
+                                  <a class="dropdown-item" href="findroom.php">Find Room</a>
+                                  <a class="dropdown-item" href="formregisroom.php">Add New Room</a>
                                 </div>
                         </li>
 
