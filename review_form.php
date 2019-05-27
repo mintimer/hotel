@@ -41,7 +41,7 @@
         <li class="nav-item">
           <?php
           if ($_SESSION['role'] == 'member') {
-            echo "<a class=" . "nav-link" . " href=#" . "review_form.php" . " style=" . "color:#eceaea" . ">Review</a>";
+            echo "<a class=" . "nav-link" . " href=#" . "review_form.php" . " style=" . "color:#eceaea" . ">REVIEW</a>";
           }
           ?>
         </li>
