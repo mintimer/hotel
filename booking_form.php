@@ -148,7 +148,11 @@
         <div class="form-row">
         <div class="form-group col-md-2">
             <label for="exampleFormControlSelect1">Amount of Guest*</label>
-            <select class="form-control" id="exampleFormControlSelect1" required>
+            <select name="amo" class="form-control" id="exampleFormControlSelect1" required>
+                <?php 
+                    if(isset($_POST['amo'])) 
+                        echo '<option value='.$_POST['amo'].'>'.$_POST['amo'].'</option>'; 
+                ?>
                 <option value="">---</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -189,17 +193,69 @@
             }
         ?>
         
-        <form action="">
-        <div>
+        <form action="" >
+        <div <?php if($success==0) echo "style="."visibility".": hidden; display:box";?>>
             <?php
                 if($success==1){
                     $sql = 'SELECT * FROM Roomtype';
                     $result = mysqli_query($con,$sql);
+                    $roomtype[] = '';
+                    $x = 0;
                     while($row = mysqli_fetch_array($result)){
-                        echo $row['RoomType'].'<br>';
+                        $roomtype[$x++] = $row;
                     }
                 }
             ?>
+            <br>
+            <div style="display:inline"><input class="form-check-input" type="checkbox" value="<?php echo $roomtype[0]['RoomType'];?>" id="defaultCheck0">
+            <label class="form-check-label" for="defaultCheck0">
+                <?php echo $roomtype[0]['RoomType'];?>
+            </label>
+            Guest 
+                <select name="go0" id="idgo0" required>
+                <?php
+                    for($i=0;$i<=$roomtype[0]['MaximumGuest'];$i++){
+                        echo '<option value='.$i.'>'.$i.'</option>';
+                    }
+                ?></select>
+            </div>
+            <br>
+            <div style="display:inline"><input class="form-check-input" type="checkbox" value="<?php echo $roomtype[1]['RoomType'];?>" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+            <?php echo $roomtype[1]['RoomType'];?>
+            </label>
+                Guest 
+                <select name="go1" id="idgo1" required>
+                <?php
+                    for($i=0;$i<=$roomtype[1]['MaximumGuest'];$i++){
+                        echo '<option value='.$i.'>'.$i.'</option>';
+                    }
+                ?></select>
+            </div>
+            <br>
+            <div style="display:inline"><input class="form-check-input" type="checkbox" value="<?php echo $roomtype[2]['RoomType'];?>" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+            <?php echo $roomtype[2]['RoomType'];?>
+                </label>
+                Guest 
+                <select name="go2" id="idgo2" required>
+                <?php
+                    for($i=0;$i<=$roomtype[2]['MaximumGuest'];$i++){
+                        echo '<option value='.$i.'>'.$i.'</option>';
+                    }
+                ?></select></div>
+            <br>
+            <div style="display:inline"><input class="form-check-input" type="checkbox" value="<?php echo $roomtype[3]['RoomType'];?>" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">
+            <?php echo $roomtype[3]['RoomType'];?>
+                Guest 
+                <select name="go3" id="idgo3" required>
+                <?php
+                    for($i=0;$i<=$roomtype[3]['MaximumGuest'];$i++){
+                        echo '<option value='.$i.'>'.$i.'</option>';
+                    }
+                ?></select></div>
+            </label>
         </div>
         </form>
         <br>
