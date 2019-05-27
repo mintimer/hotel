@@ -206,7 +206,7 @@
                         $_SESSION['cidate'] = $_POST['cidate'];
                         $_SESSION['codate'] = $_POST['codate'];
                         $_SESSION['disc'] = $_POST['disc'];
-                        require 'addmoreroom.php';
+                        header("Error: addmoreroom.php");
                     }
                     ?>
 

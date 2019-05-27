@@ -94,7 +94,7 @@
         <h3>Check-in</h3>
         <div class="container bg-dark text-white">
             <br>
-        <form action="/formcheckin2.php" method="get">
+        <form action="formcheckin2.php" method="get">
             <div class="form-group">
                 <label for="bookingno">Booking Number</label>
                 <input type="number" minlength="10" maxlength="10" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking">

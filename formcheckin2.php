@@ -133,7 +133,7 @@
         }
 
         ?>
-        <form action="/formcheckin3.php" method="get">
+        <form action="formcheckin3.php" method="get">
             <div class="invisible">
                 <input type="text" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking" value="<?php echo $bookingno; ?>">
             </div>

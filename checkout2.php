@@ -131,7 +131,7 @@
         date_default_timezone_set('Asia/Bangkok');
         $date = date('Y-m-d h:i:s a', time());
         ?>
-        <form action="/checkout3.php" method="get">
+        <form action="checkout3.php" method="get">
             <div class="invisible">
                 <input type="text" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking" value="<?php echo $bookingno; ?>">
             </div>
