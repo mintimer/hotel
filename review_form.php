@@ -34,7 +34,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: white">PROMOTION</a>
+          <a class="nav-link" href="viewdiscount.php" style="color: white">PROMOTION</a>
         </li>
 
 
@@ -217,7 +217,7 @@
                     <!-- <br><input type="button" onclick="dialog()" value="submit"> -->
                     <br>
                     <div class="col-12 text-center" >
-                    <input type="submit" onclick="dialog()" value="submit" class="btn btn-success">
+                    <input type="button" onclick="dialog()" value="submit" class="btn btn-success">
                     </div>
                 </div>
                 
