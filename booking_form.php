@@ -74,6 +74,7 @@
         <div class="container bg-light">
             <br>
             <h3>Booking Form<br></h3>
+            <div style="background-color: powderblue">
             <?php
             if($_SESSION['role'] == 'member'){
                 $namee = $_SESSION['namee'];
@@ -89,7 +90,11 @@
             $bno = $row['max']+1;
             echo '<br>BookingNo : '.$bno;
             ?>
+            </div>
+            <br>
 
+            <div class="container bg-white">
+            <br>
             <form id="form1" action="#" method="post">
             <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
@@ -146,7 +151,7 @@
             <input type="text" name="amoguest" required class="form-control" id="GNO" placeholder="Number">
         </div>
         </div>
-        <input class="btn btn-primary" name='next' type="submit" value="Next">
+        <input class="btn btn-info" name='next' type="submit" value="Next">
         <form><br>
 
         <?php
@@ -172,6 +177,11 @@
         <form action="">
         
         </form>
+        <br>
+            </div>
+            <br>
+        </div>
+        
     </body>
     </div>
 </html>
