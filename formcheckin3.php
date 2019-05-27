@@ -124,8 +124,9 @@
                 $roomid = array();
                 $roomtype = array();
                 $canbecancel = array();
-                $amountguest = array();
-                $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel,r.AmountOfGuest
+                $addbed = array();
+                $foodservice = array();
+                $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel,r.AdditionBed,r.Foodservice
                 FROM bookinginfo b, bookingroom r, roominfo rf
                 WHERE b.BookingNo=r.BookingNo AND r.RoomID=rf.RoomID AND b.BookingNo='$bookingno'";
                 $result = mysqli_query($con, $sql);
@@ -133,7 +134,8 @@
                     array_push($roomid, $row["RoomID"]);
                     array_push($roomtype, $row["RoomType"]);
                     array_push($canbecancel, $row["CanBeCancel"]);
-                    array_push($amountguest, $row["AmountOfGuest"]);
+                    array_push($addbed, $row["AdditionBed"]);
+                    array_push($foodservice, $row["Foodservice"]);
                 }
                 //gettime
                 date_default_timezone_set('Asia/Bangkok');
@@ -237,16 +239,16 @@
                             ?>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             Total Addon Price
                         </td>
                         <td>
                             <?php
-                            echo '฿' . $totaladdonprice;
+                            // echo '฿' . $totaladdonprice;
                             ?>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
                 </table>
             <?php
@@ -297,9 +299,9 @@
 
                 echo '  </tr><tr><td>Addon</td><td>';
 
-                if ($bed[$i] == 1)
+                if ($addbed[$i] == 1)
                     echo 'Extra Bed (+฿700)<br>';
-                if ($breakfast[$i] == 1)
+                if ($foodservice[$i] == 1)
                     echo 'Breakfast (+฿100/person) x ' . $amountguest[$i] . ' person</td></tr>';
 
 
