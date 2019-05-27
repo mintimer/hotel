@@ -184,6 +184,7 @@
                         $sql = "SELECT max(GuestID) as max FROM Guestinfo";
                         $result=mysqli_query($con,$sql);
                         $row=mysqli_fetch_array($result);
+                        $max = $row['max'];
                         $sql = "SELECT UserID FROM memberinfo WHERE Username = '".$_SESSION['uid']."';";
                         $result=mysqli_query($con,$sql);
                         $row=mysqli_fetch_array($result);
@@ -194,13 +195,19 @@
                         }
                         else if($role=='No'){
                             $uid = "NULL";
-                            $gid = "'".$row['max']."'";
+                            $gid = "'".$max."'";
                         }
                         $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',".$gid.",".$uid.",NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
                         mysqli_query($con,$sql) or die(mysqli_error($con));
                         
                     }
-                    if($success!=0) require 'addmoreroom.php';
+                    if($success==1){
+                        $_SESSION['branchno'] = $_POST['branch'];
+                        $_SESSION['cidate'] = $_POST['cidate'];
+                        $_SESSION['codate'] = $_POST['codate'];
+                        $_SESSION['disc'] = $_POST['disc'];
+                        require 'addmoreroom.php';
+                    }
                     ?>
 
                     
