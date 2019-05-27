@@ -46,7 +46,7 @@
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="formcheckin1.php">Check in form</a>
-                                  <a class="dropdown-item" href="#">Check out form</a>
+                                  <a class="dropdown-item" href="checkout1.php">Check out form</a>
                                   <a class="dropdown-item" href="viewcheckin.php">View Check in / Check out</a>
                                 </div>
                         </li>
@@ -244,7 +244,7 @@
                                 $ticket = 2;
                             }
 
-                            echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
+                            // echo '<tr><td>Staff Name</td><td>เดี๋ยวลิ้งเอา กูทำไม่เป็น</td>';
                             echo '<tr><td>Hotel</td><td>' . $row['BranchName'] . '</td>';
                             echo '<tr><td>RoomID</td><td>' . $hotel . $roomtype . $roomnumber . '</td>';
                             echo '<tr><td>Price in Baht</td><td>' . $price . '</td>';
