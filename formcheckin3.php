@@ -318,6 +318,7 @@
                 document.getElementById("sent").innerHTML = "<?php
                                                                 //update guest & keystatus
                                                                 $sql = "UPDATE bookinginfo SET GuestName = '$guestnameinput',KeyStatus = '$keynew' WHERE BookingNo = '$bookingno'";
+                                                                echo $sql;
                                                                 if (!mysqli_query($con, $sql)) {
                                                                     echo "ERROR";
                                                                 } else echo "1 record added";
