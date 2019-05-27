@@ -24,6 +24,8 @@
     <br>
     <div class="container bg-light">
         <form action="#" method="GET">
+        <h3>Find available room</h3>
+        <br>
         <h6>Branch</h6> 
             <select required name="branchno" class="form-control">
                 <option value="">------------------</option>
