@@ -12,9 +12,9 @@
     <body>
         <div id="addmore" name="addmore">
             <form class="form-control" method="POST">
-                <div <?php if ($success == 0) echo "style=" . "visibility" . ": hidden"; ?>>
+                <div >
                     <?php
-                    if ($success == 1) {
+                    
                         $sql = 'SELECT * FROM Roomtype';
                         $result = mysqli_query($con, $sql);
                         $roomtype[] = '';
@@ -22,7 +22,7 @@
                         while ($row = mysqli_fetch_array($result)) {
                             $roomtype[$x++] = $row;
                         }
-                    }
+                    
                     ?>
                     <label for="rt">Roomtype</label>
                     <select name="roomtype" id='rt' class="form-control">
