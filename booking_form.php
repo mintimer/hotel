@@ -203,9 +203,22 @@
                         else if ($percent <= 0 && strlen($code) > 0)
                             echo "<span style=" . "color:red" . ">Incorrect discount code.<span>";
                         else $success = 1;
-                        
-                        $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',NULL,NULL,NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
+                        $sql = "SELECT max(GuestID) as max FROM Guestinfo";
+                        $result=mysqli_query($con,$sql);
+                        $row=mysqli_fetch_array($result);
+                        $gg=$row['max']+1;
+                        if($role=='Yes'){
+                            $uid = "'".$_SESSION['uid']."'";
+                            $gid = "NULL";
+                        }
+                        else if($role=='No'){
+                            $uid = "NULL";
+                            $gid = "'".$gg."'";
+                        }
+                        $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',".$gid.",".$uid.",NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
+                        echo $sql;
                         mysqli_query($con,$sql) or die(mysqli_error($con));
+                        
                     }
                     ?>
 
