@@ -24,8 +24,29 @@
     <br>
     <div class="container bg-light">
         <form action="#" method="GET">
-            <b>Branch No.:</b><input type="text" name="branchno"><br>
-            <b>Roomtype:</b><input type="text" name="roomtype"><br>
+        <h6>Branch</h6> 
+            <select required name="branchno" class="form-control">
+                <option value="">------------------</option>
+                <?php
+                        $sql = "SELECT branchname,branchno FROM branchinfo";
+                        $result = mysqli_query($con,$sql);
+                        while($row=mysqli_fetch_array($result)){
+                        echo '<option value="'.$row['branchno'].'">'.$row['branchname'].'</option>';
+                        }
+                ?>
+            </select>
+            <h6>Roomtype</h6> 
+            <select required name="roomtype" class="form-control">
+                <option value="">------------------</option>
+                <?php
+                        $sql = "SELECT RoomType FROM roomtype";
+                        $result = mysqli_query($con,$sql);
+                        while($row=mysqli_fetch_array($result)){
+                        echo '<option value="'.$row['RoomType'].'">'.$row['RoomType'].'</option>';
+                        }  
+                ?>
+            </select>
+            <br>
             <button type="submit" name="submit" class="btn btn-info">Select</button>
         </form>
     <div <?php if (!isset($_GET['branchno'])||!isset($_GET['roomtype'])) {

@@ -28,10 +28,10 @@
         ?>
         <form action="#" method="POST">
             <b>Select room</b>
-            <select name="roomid" class="form-control">
+            <select required name="roomid" class="form-control">
                 <?php
                 if (!isset($_POST['roomid'])) {
-                    echo "<option select=" . "selected" . ">----------------------------------------</option>";
+                    echo "<option value=''".">----------------------------------------</option>";
                     $_POST['roomtype'] = NULL;
                     $_SESSION['bName'] = NULL;
                     $_SESSION['bCountry'] = NULL;
