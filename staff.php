@@ -32,7 +32,7 @@
                         
                         <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Check in / Check out
+                                  CHECK IN / CHECK OUT
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="formcheckin1.php">Check in form</a>
@@ -45,7 +45,7 @@
 
                         <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Room
+                                  ROOM
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="findroom.php">Find Room</a>
@@ -55,7 +55,7 @@
 
                         <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Report
+                                    REPORT
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="analysis1.php">Monthly Custumer</a>
