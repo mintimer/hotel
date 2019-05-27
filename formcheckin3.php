@@ -47,8 +47,8 @@
                                   Check in / Check out
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item disabled" href="#">Check in form</a>
-                                  <a class="dropdown-item" href="#">Check out form</a>
+                                  <a class="dropdown-item" href="formcheckin1.php">Check in form</a>
+                                  <a class="dropdown-item" href="checkout1.php">Check out form</a>
                                   <a class="dropdown-item" href="viewcheckin.php">View Check in / Check out</a>
                                 </div>
                         </li>
