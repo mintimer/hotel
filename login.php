@@ -33,8 +33,6 @@
                                 </div>
                                 <button type="submit" name="btn" value="member" class="btn btn-outline-primary" aria-pressed="true">LOG IN</button>
                                 <button type="submit" name="btn" value="guest" class="btn btn-outline-secondary" aria-pressed="true">GUEST</button>
-
-
                         </form>
                 </div>
                 <?php
