@@ -219,7 +219,14 @@
                     for($i=0;$i<=$_POST['amo'];$i++)
                         echo '<option value="'.$i.'">'.$i.'</option>';
                 ?>
-            </select> 
+            </select>
+            <input class="form-check-input" name="ab" type="checkbox" value="yes" id="adbed">
+            <label class="form-check-label" for="adbed">Additions Bed</label>
+            <br>
+            <input class="form-check-input" name="fd" type="checkbox" value="yes" id="food">
+            <label class="form-check-label" for="food">Food</label>
+            <br>
+            <input class="btn btn-info" name="add" type="submit" value="Add">
         </div>
         </form>
         <br>
