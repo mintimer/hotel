@@ -1,0 +1,9 @@
+.bgstaffreport {
+    height: 95vh;
+    min-height: 500px;
+    background-image: url('pic/hotel11.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Prompt', sans-serif;
+}
