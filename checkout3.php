@@ -100,7 +100,7 @@
         //set status
         if ($bookingno == NULL) $ticket = 2;
         //head
-        if ($ticket == 1) echo '<h3>Update Data Completed</h3>';
+        if ($ticket == 1) echo '<h3>Check Out Completed</h3>';
         //check member
         $memberornot = mysqli_fetch_array(mysqli_query($con, "SELECT MemberOrNot FROM bookinginfo WHERE bookingno = '$bookingno'"));
         if ($memberornot["MemberOrNot"] == 'Yes')

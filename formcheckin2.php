@@ -118,7 +118,9 @@
         $roomid = array();
         $roomtype = array();
         $canbecancel = array();
-        $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel
+        $addbed = array();
+        $foodservice = array();
+        $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel,r.AdditionBed,r.Foodservice
         FROM bookinginfo b, bookingroom r, roominfo rf
         WHERE b.BookingNo=r.BookingNo AND r.RoomID=rf.RoomID AND b.BookingNo='$bookingno'";
         $result = mysqli_query($con, $sql);
@@ -126,6 +128,8 @@
             array_push($roomid, $row["RoomID"]);
             array_push($roomtype, $row["RoomType"]);
             array_push($canbecancel, $row["CanBeCancel"]);
+            array_push($addbed, $row["AdditionBed"]);
+            array_push($foodservice, $row["Foodservice"]);
         }
         //gettime
         date_default_timezone_set('Asia/Bangkok');
@@ -249,18 +253,21 @@
                             Addon
                         </td>
                         <td>';
-                $checkbed = 'bed' . $i;
-                $checkbreakfast = 'breakfast' . $i;
-                echo '
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" id="' . $checkbed . '"name="' . $checkbed . '">
-                <label class="form-check-label">Extra Bed (+฿700)</label>
-              </div>';
-                echo '
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" id="' . $checkbreakfast . '"name="' . $checkbreakfast . '">
-                <label class="form-check-label">Breakfast (+฿100/person)</label>
-              </div>';
+                // $checkbed = 'bed' . $i;
+                // $checkbreakfast = 'breakfast' . $i;
+                if($addbed[$i]==1) echo'Extra Bed (+฿700)<br>';
+                if($foodservice[$i]==1) echo'Breakfast (+฿100/person)';
+
+            //     echo '
+            // //     <div class="form-check">
+            // //     <input class="form-check-input" type="checkbox" value="1" id="' . $checkbed . '"name="' . $checkbed . '">
+            // //     <label class="form-check-label">Extra Bed (+฿700)</label>
+            // //   </div>';
+            //     echo '
+            // //     <div class="form-check">
+            // //     <input class="form-check-input" type="checkbox" value="1" id="' . $checkbreakfast . '"name="' . $checkbreakfast . '">
+            // //     <label class="form-check-label">Breakfast (+฿100/person)</label>
+            // //   </div>';
                 echo '</td>
                     </tr>
                     </tbody>

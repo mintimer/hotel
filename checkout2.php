@@ -214,8 +214,13 @@
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn btn-info">confirm</button>
+            <?php if ($key['KeyStatus'] == 1)
+            echo '<button type="submit" class="btn btn-info">confirm</button>';
+            else if ($key['KeyStatus'] == 0) echo '<div class="alert alert-warning" role="alert">Cannot Check-out. Please Check-in first.</div>
+            <a class="btn btn-primary" href="/checkout1.php" role="button">Back</a>';
+            else echo'<a class="btn btn-primary" href="/checkout1.php" role="button">Back</a>';
 
+            ?>
 
         </form>
 
