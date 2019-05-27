@@ -107,8 +107,8 @@
                 }
                 ?>
             </select><br><br>
-        Check-In Date* : <input id="cid" type="date" name="cidate" onChange = "show()" required>
-        Check-Out Date* : <input id="cod" type="date" name="codate" onChange = "show()" required>
+        Check-In Date* : <input id="cid" type="date" name="cidate" onChange = "show()" value='<?php if(isset($_POST['cidate'])) echo $_POST['cidate']; ?>' required>
+        Check-Out Date* : <input id="cod" type="date" name="codate" onChange = "show()" value='<?php if(isset($_POST['codate'])) echo $_POST['codate']; ?>' required>
         <p id="demo"></p>
         <Script>
             var night = new Date(night);
@@ -121,12 +121,12 @@
                 if(night>0 && now>0)
                     document.getElementById("demo").innerHTML = night + " Night(s)";
                 else
-                    document.getElementById("demo").innerHTML = "Please select the correct dates.";
+                    document.getElementById("demo").innerHTML = 'Please select the correct dates.';
             }
         </Script>
 
         <label for="discode">Discount Code <span id="percent"></span></label>
-        <input type="discountcode" name="disc" class="form-control" id="discode" placeholder="Enter Discount Code" onkeyup="show2(this.value)">
+        <input type="discountcode" name="disc" class="form-control" id="discode" value="<?php if(isset($_POST['disc'])) echo $_POST['disc']; ?>" placeholder="Enter Discount Code" onkeyup="show2(this.value)">
         <script>
             function show2(str) {
                 if (str.length == 0) { 
@@ -148,14 +148,17 @@
         <div class="form-row">
         <div class="form-group col-md-2">
             <label for="GNO">Amount of Guest*</label>
-            <input type="text" name="amoguest" required class="form-control" id="GNO" placeholder="Number">
+            <input type="text" name="amoguest" required class="form-control" id="GNO" value="<?php if(isset($_POST['amoguest'])) echo $_POST['amoguest']; ?>" placeholder="Number"'>
         </div>
         </div>
-        <input class="btn btn-info" name='next' type="submit" value="Next">
+        <?php
+            if(!isset($_POST['next']))
+                echo '<input class="btn btn-primary" name="next" type="submit" value="Next">';
+        ?>
         <form><br>
 
         <?php
-            $success = 0;
+        $success = 0;
             if(isset($_POST['next'])){
                 $cidate = strtotime($_POST['cidate']);
                 $codate = strtotime($_POST['codate']);
@@ -170,12 +173,18 @@
                     echo "<span style="."color:red".">Please select the correct date.<span>";
                 else if($percent<=0 && strlen($code)>0 )
                     echo "<span style="."color:red".">Incorrect discount code.<span>";
-                else echo "<span style="."color:green".">Correct valid. <span>";
+                else $success = 1;
             }
         ?>
         
         <form action="">
-        
+        <div>
+            <?php
+                if($success==1){
+                    echo 'เก่งจัง';
+                }
+            ?>
+        </div>
         </form>
         <br>
             </div>
@@ -183,5 +192,6 @@
         </div>
         
     </body>
+    <?php mysqli_close($con); ?>
     </div>
 </html>

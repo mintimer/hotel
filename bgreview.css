@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .bgstaffreport {
     height: 95vh;
     min-height: 500px;
@@ -6,4 +7,14 @@
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Prompt', sans-serif;
+=======
+.bgstaffreport {
+    height: 95vh;
+    min-height: 500px;
+    background-image: url('pic/hotel11.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Prompt', sans-serif;
+>>>>>>> 9b42cee3ffb7d54451d46b97c073bf1f563eaacd
 }
