@@ -58,7 +58,7 @@
                                   Room
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Find Room</a>
+                                  <a class="dropdown-item" href="findroom.php">Find Room</a>
                                   <a class="dropdown-item" href="formregisroom.php">Add New Room</a>
                                 </div>
                         </li>

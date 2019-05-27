@@ -61,11 +61,11 @@
                                   Room
                              </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Find Room</a>
+                                  <a class="dropdown-item" href="findroom.php">Find Room</a>
                                   <a class="dropdown-item" href="formregisroom.php">Add New Room</a>
                                 </div>
                         </li>
-
+                        
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Report
