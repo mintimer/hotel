@@ -208,6 +208,7 @@
                         $_SESSION['disc'] = $_POST['disc'];
                         $_SESSION['bno'] = $bno;
                         $_SESSION['gno'] = $max;
+                        $_SESSION['nights'] = $night;
                         // header("Error: addmoreroom.php");
                         echo "<script> window.location.replace('addmoreroom.php'); </script>";
                         // echo "yee";
