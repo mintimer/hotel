@@ -1,6 +1,5 @@
 <html>
     <head>
-    <head>
         <title>Add more room</title>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
