@@ -41,7 +41,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link disable" href="#" style="color: white">BOOKING</a>
+          <a class="nav-link disable" href="#" style="color: #eceaea">BOOKING</a>
         </li>
 
         <li class="nav-item">
@@ -74,6 +74,7 @@
         <div class="container bg-light">
             <br>
             <h3>Booking Form<br></h3>
+            <div style="background-color: powderblue">
             <?php
             if($_SESSION['role'] == 'member'){
                 $namee = $_SESSION['namee'];
@@ -89,7 +90,11 @@
             $bno = $row['max']+1;
             echo '<br>BookingNo : '.$bno;
             ?>
+            </div>
+            <br>
 
+            <div class="container bg-white">
+            <br>
             <form id="form1" action="#" method="post">
             <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
@@ -181,6 +186,11 @@
             ?>
         </div>
         </form>
+        <br>
+            </div>
+            <br>
+        </div>
+        
     </body>
     <?php mysqli_close($con); ?>
     </div>
