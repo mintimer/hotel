@@ -18,6 +18,7 @@
             text-align: center;
         }
     </style>
+    <title>Booking Form</title>
     </head>
 
     <body class="bgbooking"> 
@@ -73,7 +74,23 @@
         <div class="container bg-light">
             <br>
             <h3>Booking Form<br></h3>
-            <form action="#" method="POST">
+            <?php
+            if($_SESSION['role'] == 'member'){
+                $namee = $_SESSION['namee'];
+                $userID = $namee['userid'];
+                $u_firstname = $namee['firstname'];
+                $u_lastname = $namee['lastname'];
+                echo 'UserID : '.$userID;
+            }
+            else echo 'Guest';
+            $sql = 'SELECT Max(BookingNo) as max FROM Bookinginfo';
+            $result = mysqli_query($con,$sql);
+            $row = mysqli_fetch_array($result);
+            $bno = $row['max']+1;
+            echo '<br>BookingNo : '.$bno;
+            ?>
+
+            <form id="form1" action="#" method="post">
             <label for="validationHotel">Select Hotel</label>
             <select name="branch" id="validationHotel" class="custom-select" required>
                 <option selected value="">Hotel</option>
@@ -85,10 +102,8 @@
                 }
                 ?>
             </select><br><br>
-        
         Check-In Date* : <input id="cid" type="date" name="cidate" onChange = "show()" required>
         Check-Out Date* : <input id="cod" type="date" name="codate" onChange = "show()" required>
-        
         <p id="demo"></p>
         <Script>
             var night = new Date(night);
@@ -96,7 +111,9 @@
                 var x = new Date(document.getElementById("cid").value);
                 var y = new Date(document.getElementById("cod").value);
                 night = (y-x)/(360*24*10000);
-                if(night>0)
+                var now = new Date();
+                now = (x-now)/(360*24*10000);
+                if(night>0 && now>0)
                     document.getElementById("demo").innerHTML = night + " Night(s)";
                 else
                     document.getElementById("demo").innerHTML = "Please select the correct dates.";
@@ -129,9 +146,32 @@
             <input type="text" name="amoguest" required class="form-control" id="GNO" placeholder="Number">
         </div>
         </div>
-        <input class="btn btn-primary" type="submit" value="Submit">
-        <form>
+        <input class="btn btn-primary" name='next' type="submit" value="Next">
+        <form><br>
 
+        <?php
+            $success = 0;
+            if(isset($_POST['next'])){
+                $cidate = strtotime($_POST['cidate']);
+                $codate = strtotime($_POST['codate']);
+                $night = ceil(($codate-$cidate)/60/60/24);
+                $now = time();
+                $code = $_POST["disc"];
+                if(strlen($code)==0)
+                    $percent=0;
+                else
+                    $percent = $_SESSION['percent'];
+                if($night<=0 || $cidate < $now)
+                    echo "<span style="."color:red".">Please select the correct date.<span>";
+                else if($percent<=0 && strlen($code)>0 )
+                    echo "<span style="."color:red".">Incorrect discount code.<span>";
+                else echo "<span style="."color:green".">Correct valid. <span>";
+            }
+        ?>
+        
+        <form action="">
+        
+        </form>
     </body>
     </div>
 </html>
