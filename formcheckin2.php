@@ -131,9 +131,7 @@
             array_push($addbed, $row["AdditionBed"]);
             array_push($foodservice, $row["Foodservice"]);
         }
-        //gettime
-        date_default_timezone_set('Asia/Bangkok');
-        $date = date('Y-m-d h:i:s a', time());
+
         ?>
         <form action="/formcheckin3.php" method="get">
             <div class="invisible">
