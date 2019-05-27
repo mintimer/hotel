@@ -104,10 +104,12 @@
                     <?php
                         error_reporting(0);
                         $sql =
-                        "SELECT GuestName, SUM( DateDiff(CheckOutDate,CheckInDate)) AS DAYs
+                        "SELECT GuestName ,KeyStatus, SUM( DateDiff(CheckOutDate,CheckInDate)) AS DAYs
                         FROM bookinginfo
                         GROUP BY GuestName
+                        HAVING KeyStatus = '2'
                         ORDER BY DAYs DESC
+                        
                         LIMIT 10";
                         $result = mysqli_query($con,$sql);
                         while($row=mysqli_fetch_array($result)){

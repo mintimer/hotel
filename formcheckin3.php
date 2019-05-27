@@ -25,160 +25,158 @@
     </style>
 </head>
 
-<body class="bgcheckin"> 
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
-            <a class="navbar-brand" style="color: white">
-                <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                JustFang
-            </a>
-                    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                  
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                <ul class="navbar-nav mr-auto">              
-                    <li class="nav-item">
-                        <a class="nav-link" href="staff.php" style="color: white">HOME</a>
-                    </li>
+<body class="bgcheckin">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
+        <a class="navbar-brand" style="color: white">
+            <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            JustFang
+        </a>
 
-                    <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Check in / Check out
-                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item disabled" href="#">Check in form</a>
-                                  <a class="dropdown-item" href="checkout1.php">Check out form</a>
-                                  <a class="dropdown-item" href="viewcheckin.php">View Check in / Check out</a>
-                                </div>
-                        </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                        <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Room
-                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="findroom.php">Find Room</a>
-                                  <a class="dropdown-item" href="formregisroom.php">Add New Room</a>
-                                </div>
-                        </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="staff.php" style="color: white">HOME</a>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Report
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="analysis1.php">Monthly Custumer</a>
-                            <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
-                            <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
-                            <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
-                            <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
-                            <a class="dropdown-item" href="analysis6.php">Member Score</a>
-                            <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
-                            <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
-                            <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>
-                            <a class="dropdown-item" href="analysis10.php">Payment</a>
-                            <a class="dropdown-item" href="analysis11.php">Lastest 5 Month New Member</a>
-                            <a class="dropdown-item" href="analysis12.php">Top 5 Room</a>
-                        </div>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Check in / Check out
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item disabled" href="#">Check in form</a>
+                        <a class="dropdown-item" href="checkout1.php">Check out form</a>
+                        <a class="dropdown-item" href="viewcheckin.php">View Check in / Check out</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Room
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="findroom.php">Find Room</a>
+                        <a class="dropdown-item" href="formregisroom.php">Add New Room</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Report
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="analysis1.php">Monthly Custumer</a>
+                        <a class="dropdown-item" href="analysis2.php">Staff In Position</a>
+                        <a class="dropdown-item" href="analysis3.php">Monthly Reservasion</a>
+                        <a class="dropdown-item" href="analysis4.php">Age Of Employee</a>
+                        <a class="dropdown-item" href="analysis5.php">Profit Of Each Branch</a>
+                        <a class="dropdown-item" href="analysis6.php">Member Score</a>
+                        <a class="dropdown-item" href="analysis7.php">Nation Of Employee</a>
+                        <a class="dropdown-item" href="analysis8.php">Blood Type Of Employee</a>
+                        <a class="dropdown-item" href="analysis9.php">Top 10 Duration</a>
+                        <a class="dropdown-item" href="analysis10.php">Payment</a>
+                        <a class="dropdown-item" href="analysis11.php">Lastest 5 Month New Member</a>
+                        <a class="dropdown-item" href="analysis12.php">Top 5 Room</a>
+                    </div>
+                </li>
 
 
-                              
-                </ul>
 
-                           
-            </div>
-        </nav>
+            </ul>
+
+
+        </div>
+    </nav>
+    <br>
+    <div class="container bg-light">
         <br>
-        <div class="container bg-light">
-            <br>
 
-            <?php
-                error_reporting(0);
-                //booking no
-                $bookingno = mysqli_real_escape_string($con, $_GET["bookingno"]);
-                //set status
-                if ($bookingno == NULL) $ticket = 2;
-                //head
-                if ($ticket == 1) echo '<h3>Update Data Completed</h3>';
-                //check member
-                $memberornot = mysqli_fetch_array(mysqli_query($con, "SELECT MemberOrNot FROM bookinginfo WHERE bookingno = '$bookingno'"));
-                if ($memberornot["MemberOrNot"] == 'Yes')
-                    $sql = "SELECT FirstName, LastName FROM memberinfo WHERE UserID = (SELECT UserID FROM bookinginfo WHERE bookingno = '$bookingno')";
-                else if ($memberornot["MemberOrNot"] == 'No')
-                    $sql = "SELECT FirstName, LastName FROM guestinfo WHERE GuestID = (SELECT GuestID FROM bookinginfo WHERE bookingno = '$bookingno')";
-                $name1row = mysqli_fetch_array(mysqli_query($con, $sql));
-                $bookedby = $name1row["FirstName"] . " " . $name1row["LastName"];
-                //total price
-                $price = mysqli_fetch_array(mysqli_query($con, "SELECT Balance FROM bookinginfo WHERE bookingno = '$bookingno'"));
-                //paid
-                $paid = mysqli_fetch_array(mysqli_query($con, "SELECT SUM(Paid)AS paid FROM paymentinfo WHERE BookingNo = '$bookingno' GROUP BY ('$bookingno')"));
-                //balance
-                $balance = $price["Balance"] - $paid["paid"];
-                //guestname
-                $guestname = mysqli_fetch_array(mysqli_query($con, "SELECT GuestName FROM bookinginfo WHERE bookingno = '$bookingno'"));
-                //key status
-                $key = mysqli_fetch_array(mysqli_query($con, "SELECT KeyStatus FROM bookinginfo WHERE bookingno = '$bookingno'"));
-                //roominfoarray
-                $roomid = array();
-                $roomtype = array();
-                $canbecancel = array();
-                $addbed = array();
-                $foodservice = array();
-                $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel,r.AdditionBed,r.Foodservice
+        <?php
+        error_reporting(0);
+        //booking no
+        $bookingno = mysqli_real_escape_string($con, $_GET["bookingno"]);
+        //set status
+        if ($bookingno == NULL) $ticket = 2;
+        //head
+        if ($ticket == 1) echo '<h3>Update Data Completed</h3>';
+        //check member
+        $memberornot = mysqli_fetch_array(mysqli_query($con, "SELECT MemberOrNot FROM bookinginfo WHERE bookingno = '$bookingno'"));
+        if ($memberornot["MemberOrNot"] == 'Yes')
+            $sql = "SELECT FirstName, LastName FROM memberinfo WHERE UserID = (SELECT UserID FROM bookinginfo WHERE bookingno = '$bookingno')";
+        else if ($memberornot["MemberOrNot"] == 'No')
+            $sql = "SELECT FirstName, LastName FROM guestinfo WHERE GuestID = (SELECT GuestID FROM bookinginfo WHERE bookingno = '$bookingno')";
+        $name1row = mysqli_fetch_array(mysqli_query($con, $sql));
+        $bookedby = $name1row["FirstName"] . " " . $name1row["LastName"];
+        //total price
+        $price = mysqli_fetch_array(mysqli_query($con, "SELECT Balance FROM bookinginfo WHERE bookingno = '$bookingno'"));
+        //paid
+        $paid = mysqli_fetch_array(mysqli_query($con, "SELECT SUM(Paid)AS paid FROM paymentinfo WHERE BookingNo = '$bookingno' GROUP BY ('$bookingno')"));
+        //balance
+        $balance = $price["Balance"] - $paid["paid"];
+        //guestname
+        $guestname = mysqli_fetch_array(mysqli_query($con, "SELECT GuestName FROM bookinginfo WHERE bookingno = '$bookingno'"));
+        //key status
+        $key = mysqli_fetch_array(mysqli_query($con, "SELECT KeyStatus FROM bookinginfo WHERE bookingno = '$bookingno'"));
+        //roominfoarray
+        $roomid = array();
+        $roomtype = array();
+        $canbecancel = array();
+        $addbed = array();
+        $foodservice = array();
+        $sql = "SELECT r.RoomID,rf.RoomType,rf.CanBeCancel,r.AdditionBed,r.Foodservice
                 FROM bookinginfo b, bookingroom r, roominfo rf
                 WHERE b.BookingNo=r.BookingNo AND r.RoomID=rf.RoomID AND b.BookingNo='$bookingno'";
-                $result = mysqli_query($con, $sql);
-                while ($row = mysqli_fetch_array($result)) {
-                    array_push($roomid, $row["RoomID"]);
-                    array_push($roomtype, $row["RoomType"]);
-                    array_push($canbecancel, $row["CanBeCancel"]);
-                    array_push($addbed, $row["AdditionBed"]);
-                    array_push($foodservice, $row["Foodservice"]);
-                }
-                //gettime
-                date_default_timezone_set('Asia/Bangkok');
-                $date = date('Y-m-d h:i:s a', time());
-                //addonprice
-                $totaladdonprice = 0;
-                $lenght = count($roomid);
-                for ($i = 0; $i < $lenght; $i++) {
-                    $bed = array();
-                    $breakfast = array();
-                    $checkbed = 'bed' . $i;
-                    $checkbreakfast = 'breakfast' . $i;
-                    $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-                    $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-                    if ($temp3 == "")
-                        $bed[$i] = 0;
-                    else
-                        $bed[$i] = $temp3;
-                    if ($temp4 == "")
-                        $breakfast[$i] = 0;
-                    else
-                        $breakfast[$i] = $temp4;
+        $result = mysqli_query($con, $sql);
+        while ($row = mysqli_fetch_array($result)) {
+            array_push($roomid, $row["RoomID"]);
+            array_push($roomtype, $row["RoomType"]);
+            array_push($canbecancel, $row["CanBeCancel"]);
+            array_push($addbed, $row["AdditionBed"]);
+            array_push($foodservice, $row["Foodservice"]);
+        }
+        //gettime
+        // date_default_timezone_set('Asia/Bangkok');
 
-                    $totaladdonprice = $totaladdonprice + ($bed[$i] * 700) + ($breakfast[$i] * 100 * $amountguest[$i]);
-                }
-                //Get GuestName
-                if (isset($_GET['guestnameinput']))
-                    $guestnameinput = $_GET['guestnameinput'];
-                else        $guestnameinput = NULL;
-                //get key status
-                $keynew = $_GET['keystatus'];
+        //addonprice
+        // $totaladdonprice = 0;
+        // $lenght = count($roomid);
+        // for ($i = 0; $i < $lenght; $i++) {
+        //     $bed = array();
+        //     $breakfast = array();
+        //     $checkbed = 'bed' . $i;
+        //     $checkbreakfast = 'breakfast' . $i;
+        //     $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
+        //     $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
+        //     if ($temp3 == "")
+        //         $bed[$i] = 0;
+        //     else
+        //         $bed[$i] = $temp3;
+        //     if ($temp4 == "")
+        //         $breakfast[$i] = 0;
+        //     else
+        //         $breakfast[$i] = $temp4;
 
+        //     $totaladdonprice = $totaladdonprice + ($bed[$i] * 700) + ($breakfast[$i] * 100 * $amountguest[$i]);
+        // }
+        //Get GuestName
 
+        if (isset($_GET['guestnameinput']))
+            $guestnameinput = $_GET['guestnameinput'];
+        else        $guestnameinput = NULL;
+        //get key status
+        $keynew = $_GET['keystatus'];
+        ?>
 
-            ?>
-
-            <form action="#" method="get">
-                <!-- <div class="invisible">
+        <form action="#" method="get">
+            <!-- <div class="invisible">
                     <input type="text" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking" value="<?php echo $bookingno; ?>">
                 </div> -->
-                <?php
-                    if ($ticket == 1) {
-                        echo '<table class="table table-striped" id="table">';
+            <?php
+            if ($ticket == 1) {
+                echo '<table class="table table-striped" id="table">';
                 ?>
 
                 <thead class="thead-dark">
@@ -213,7 +211,6 @@
                                 echo $guestname["GuestName"];
                             else
                                 echo $guestnameinput;
-
                             ?>
                         </td>
                     </tr>
@@ -229,31 +226,31 @@
                             ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Key Status Update Date/Time
-                        </td>
-                        <td>
-                            <?php
-                            echo $date;
-                            ?>
-                        </td>
-                    </tr>
                     <!-- <tr>
-                        <td>
-                            Total Addon Price
-                        </td>
-                        <td>
-                            <?php
-                            // echo '฿' . $totaladdonprice;
-                            ?>
-                        </td>
-                    </tr> -->
+                            <td>
+                                Key Status Update Date/Time
+                            </td>
+                            <td>
+                                <?php
+                                // echo  date('Y-m-d h:i:s a', time());;
+                                ?>
+                            </td>
+                        </tr> -->
+                    <!-- <tr>
+                            <td>
+                                Total Addon Price
+                            </td>
+                            <td>
+                                <?php
+                                // echo '฿' . $totaladdonprice;
+                                ?>
+                            </td>
+                        </tr> -->
                 </tbody>
                 </table>
             <?php
-                }
-            ?>
+        }
+        ?>
             <?php
             $lenght = count($roomid);
             // if ($key['KeyStatus'] == 0&&1){
@@ -282,36 +279,36 @@
                 echo $canbecancel[$i];
                 echo '</td>';
                 //addon
-                $bed = array();
-                $breakfast = array();
-                $checkbed = 'bed' . $i;
-                $checkbreakfast = 'breakfast' . $i;
-                $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-                $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-                if ($temp3 == "")
-                    $bed[$i] = 0;
-                else
-                    $bed[$i] = $temp3;
-                if ($temp4 == "")
-                    $breakfast[$i] = 0;
-                else
-                    $breakfast[$i] = $temp4;
+                // $bed = array();
+                // $breakfast = array();
+                // $checkbed = 'bed' . $i;
+                // $checkbreakfast = 'breakfast' . $i;
+                // $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
+                // $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
+                // if ($temp3 == "")
+                //     $bed[$i] = 0;
+                // else
+                //     $bed[$i] = $temp3;
+                // if ($temp4 == "")
+                //     $breakfast[$i] = 0;
+                // else
+                //     $breakfast[$i] = $temp4;
 
-                echo '  </tr><tr><td>Addon</td><td>';
+                // echo '  </tr><tr><td>Addon</td><td>';
 
-                if ($addbed[$i] == 1)
-                    echo 'Extra Bed (+฿700)<br>';
-                if ($foodservice[$i] == 1)
-                    echo 'Breakfast (+฿100/person) x ' . $amountguest[$i] . ' person</td></tr>';
+                // if ($addbed[$i] == 1)
+                //     echo 'Extra Bed (+฿700)<br>';
+                // if ($foodservice[$i] == 1)
+                //     echo 'Breakfast (+฿100/person) x ' . $amountguest[$i] . ' person</td></tr>';
 
 
                 echo '</tbody></table>';
             } ?>
         </form>
         <?php
-            echo'<a class="btn btn-info" href="/formcheckin1.php" role="button">Back</a>';
+        echo '<a class="btn btn-info" href="/formcheckin1.php" role="button">Back</a>';
         ?>
-        
+
 
 
         <script>
@@ -320,35 +317,35 @@
                 document.getElementById("sent").innerHTML = "<?php
                                                                 //update guest & keystatus
                                                                 $sql = "UPDATE bookinginfo SET GuestName = '$guestnameinput',KeyStatus = '$keynew' WHERE BookingNo = '$bookingno'";
-                                                                echo $sql;
                                                                 if (!mysqli_query($con, $sql)) {
                                                                     echo "ERROR";
                                                                 } else echo "1 record added";
 
-                                                                for ($i = 0; $i < $lenght; $i++) {
-                                                                    $bed = array();
-                                                                    $breakfast = array();
-                                                                    $checkbed = 'bed' . $i;
-                                                                    $checkbreakfast = 'breakfast' . $i;
-                                                                    $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-                                                                    $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-                                                                    if ($temp3 == "")
-                                                                        $bed[$i] = 0;
-                                                                    else
-                                                                        $bed[$i] = $temp3;
-                                                                    if ($temp4 == "")
-                                                                        $breakfast[$i] = 0;
-                                                                    else
-                                                                        $breakfast[$i] = $temp4;
-                                                                    $sql = "UPDATE bookingroom SET AdditionBed = '$bed[$i]',FoodService = '$breakfast[$i]' WHERE RoomID = '$roomid[$i]'";
-                                                                    if (!mysqli_query($con, $sql)) {
-                                                                        echo "ERROR";
-                                                                    } else echo "1 record added";
-                                                                } ?>";
+                                                                // for ($i = 0; $i < $lenght; $i++) {
+                                                                //     $bed = array();
+                                                                //     $breakfast = array();
+                                                                //     $checkbed = 'bed' . $i;
+                                                                //     $checkbreakfast = 'breakfast' . $i;
+                                                                //     $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
+                                                                //     $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
+                                                                //     if ($temp3 == "")
+                                                                //         $bed[$i] = 0;
+                                                                //     else
+                                                                //         $bed[$i] = $temp3;
+                                                                //     if ($temp4 == "")
+                                                                //         $breakfast[$i] = 0;
+                                                                //     else
+                                                                //         $breakfast[$i] = $temp4;
+                                                                //     $sql = "UPDATE bookingroom SET AdditionBed = '$bed[$i]',FoodService = '$breakfast[$i]' WHERE RoomID = '$roomid[$i]'";
+                                                                //     if (!mysqli_query($con, $sql)) {
+                                                                //         echo "ERROR";
+                                                                //     } else echo "1 record added";
+                                                                // } 
+                                                                ?>";
             }
         </script>
         <br>
-        </div>
+    </div>
 
 </body>
 <?php mysqli_close($con); ?>

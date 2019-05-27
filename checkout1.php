@@ -80,7 +80,7 @@
         <br>
         <div class="container bg-white">
             <br>
-        <h3>Check Out</h3>
+        <h3>Check-out</h3>
 
         <div class="container bg-dark text-white">
 <br>
