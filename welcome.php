@@ -32,7 +32,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="booking_form.php" style="color: white">BOOKING</a>
+          <?php
+            if($_SESSION['role']=='member')
+              echo "<a class='nav-link' href='booking_form.php' style='color: white'>BOOKING</a>";
+            else echo "<a class='nav-link' href='guest.php' style='color: white'>BOOKING</a>";
+          ?>
         </li>
 
         <li class="nav-item">

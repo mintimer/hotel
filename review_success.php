@@ -17,8 +17,8 @@
                                                                           WHERE ri.RoomType = "."'".$_SESSION['roomtype']."'".") ) )
                  WHERE rt.RoomType = "."'".$_SESSION['roomtype']."'";
         mysqli_query($con, $sql3);
-        header("Location: review_form.php");
         mysqli_close($con);
+        header("Location: review_form.php");
     ?>
 </body>
 </html>

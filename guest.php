@@ -13,8 +13,8 @@
 <body>
     <form action="insertguest.php" method="POST">
         Email: <input type="email" name="email" require placeholder="example@mail.com"><br>
-        Firstname: <input type="text" name="fName" require placeholder="Lorem"><br>
-        Lastname: <input type="text" name="lName" require placeholder="Ipsum"><br>
+        Firstname: <input type="text" name="fName" require placeholder="FirstName"><br>
+        Lastname: <input type="text" name="lName" require placeholder="LastName"><br>
         Phone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="080-413-xxxx"><br>
         <input type="submit" name="submit" value="submit">
     </form>
