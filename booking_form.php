@@ -148,7 +148,11 @@
         <div class="form-row">
         <div class="form-group col-md-2">
             <label for="exampleFormControlSelect1">Amount of Guest*</label>
-            <select class="form-control" id="exampleFormControlSelect1" required>
+            <select name="amo" class="form-control" id="exampleFormControlSelect1" required>
+                <?php 
+                    if(isset($_POST['amo'])) 
+                        echo '<option value='.$_POST['amo'].'>'.$_POST['amo'].'</option>'; 
+                ?>
                 <option value="">---</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -196,7 +200,12 @@
                     $sql = 'SELECT * FROM Roomtype';
                     $result = mysqli_query($con,$sql);
                     while($row = mysqli_fetch_array($result)){
-                        echo $row['RoomType'].'<br>';
+                        echo '<div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="'.$row['RoomType'].'" id="Check'.$row['RoomType'].'">
+                                <label class="form-check-label" for="Check'.$row['RoomType'].'">
+                                '.$row['RoomType'].'
+                                </label>
+                            </div>';
                     }
                 }
             ?>
