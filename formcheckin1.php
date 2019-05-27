@@ -18,7 +18,7 @@
         <form action="/formcheckin2.php" method="get">
             <div class="form-group">
                 <label for="bookingno">Booking Number</label>
-                <input type="text" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking">
+                <input type="number" minlength="10" maxlength="10" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking">
             </div>
 
             <button type="submit" class="btn btn-success">find</button>
