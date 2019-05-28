@@ -12,7 +12,7 @@
     include('connect.php');
     session_start();
     ?>
-    <link rel="stylesheet" href="bgbooking.css">
+    <link rel="stylesheet" href="bgbooking2.css">
     <!-- <style>
             table,
             th,
@@ -27,7 +27,7 @@
         </style> -->
 </head>
 
-<body class="bgbooking">
+<body class="bgbooking2">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
         <a class="navbar-brand" style="color: white">
             <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -79,8 +79,8 @@
     <div class="container bg-light">
         <br>
         <h3>Adding more room<br></h3>
-        <div style="background-color: powderblue"></div>
-        <div class="container bg-white">
+        <h5 style="background-color: powderblue">เลือกห้องพัก</h5>
+        <div class="container bg-dark text-white">
             <br>
             <for method="POST">
                 <?php
@@ -94,6 +94,8 @@
                 }
                 ?>
                 <label for="rt">Roomtype</label>
+                <div class="bg-light">
+                   
                 <table  class="table table-bordered">
                     <tr>
                         <td width="50%">
@@ -141,8 +143,11 @@
                         </td>
                     </tr>
                 </table>
+                </div>
+<br>
+                <div class="container bg-white text-dark">
+                    <br>
                 <label for="gt">Guest</label>
-                <table class="table table-borderless">
                     <tr>
                         <td width="50%">
                             <select name="guest" id='gt' class="form-control">
@@ -152,7 +157,12 @@
                                 ?>
                             </select>
                         </td>
-                        <td width="50%">
+                    <tr>
+                        <br>
+            </div>
+                <div class="container bg-dark">
+                    <br>
+                <td width="50%" >
                             <input class="form-check-input" name="ab" type="checkbox" value="yes" id="adbed">
                             <label class="form-check-label" for="adbed">Additions Bed</label>
                             <br>
@@ -160,8 +170,8 @@
                             <label class="form-check-label" for="food">Food</label>
                             <br>
                         </td>
-                    <tr>
-                </table>
+                        <br>
+            </div>
 
                 <!-- <input class="btn btn-info" name="add" type="submit" value="Add"> -->
                 <input type="hidden" name="bookno" value="<?php echo $bno ?>">
@@ -178,9 +188,13 @@
                 </script>
                 <button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">Submit</button>
                 </form>
+                <br>
         </div>
+        <br>
     </div>
+    <br>
     </div>
+    <br>
 </body>
 
 </html>
