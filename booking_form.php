@@ -24,7 +24,8 @@
 </head>
 
 <body class="bgbooking">
-    <?php session_start(); ?>
+    <?php session_start(); 
+    $_SESSION['added']=0;?>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #339999;" id="mynav">
         <a class="navbar-brand" style="color: white">
             <img src="pic/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">

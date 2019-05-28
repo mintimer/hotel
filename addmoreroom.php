@@ -186,16 +186,15 @@
                         })
                     }
                 </script>
-                </form>
-                <form>
-                    
                     <?php 
-                    if(isset($_POST['add'])){
-                        echo '<button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">Submit</button>';
+                    if(isset($_SESSION['added'])){
+                        if($_SESSION['added']==1){
+                            echo '<button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">Submit</button>';
+                            }
                         }
                     ?>
-                    <br>
                 </form>
+            <br>
         </div>
         <br>
     </div>

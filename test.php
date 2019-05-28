@@ -33,6 +33,8 @@
                                                     
                                                     $sql2 = "INSERT INTO bookingroom VALUES('".$rid."','".$bno."','".$gno."','".$addbed."','".$food."')";
                         mysqli_query($con,$sql2) or die("Error: ".mysqli_error($con));
+                        $_SESSION['rtp'] = $_POST['exampleRadios'] ;
+                        $_SESSION['added'] = 1;
         header("Location: addmoreroom.php");
         ?>
         
