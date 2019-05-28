@@ -137,31 +137,6 @@
             array_push($addbed, $row["AdditionBed"]);
             array_push($foodservice, $row["Foodservice"]);
         }
-        //gettime
-        // date_default_timezone_set('Asia/Bangkok');
-
-        //addonprice
-        // $totaladdonprice = 0;
-        // $lenght = count($roomid);
-        // for ($i = 0; $i < $lenght; $i++) {
-        //     $bed = array();
-        //     $breakfast = array();
-        //     $checkbed = 'bed' . $i;
-        //     $checkbreakfast = 'breakfast' . $i;
-        //     $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-        //     $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-        //     if ($temp3 == "")
-        //         $bed[$i] = 0;
-        //     else
-        //         $bed[$i] = $temp3;
-        //     if ($temp4 == "")
-        //         $breakfast[$i] = 0;
-        //     else
-        //         $breakfast[$i] = $temp4;
-
-        //     $totaladdonprice = $totaladdonprice + ($bed[$i] * 700) + ($breakfast[$i] * 100 * $amountguest[$i]);
-        // }
-        //Get GuestName
 
         if (isset($_GET['guestnameinput']))
             $guestnameinput = $_GET['guestnameinput'];
@@ -171,9 +146,7 @@
         ?>
 
         <form action="#" method="get">
-            <!-- <div class="invisible">
-                    <input type="text" class="form-control" name="bookingno" id="bookingno" placeholder="Enter Booking" value="<?php echo $bookingno; ?>">
-                </div> -->
+            <?php echo $bookingno; ?>">
             <?php
             if ($ticket == 1) {
                 echo '<table class="table table-striped" id="table">';
@@ -226,26 +199,6 @@
                             ?>
                         </td>
                     </tr>
-                    <!-- <tr>
-                            <td>
-                                Key Status Update Date/Time
-                            </td>
-                            <td>
-                                <?php
-                                // echo  date('Y-m-d h:i:s a', time());;
-                                ?>
-                            </td>
-                        </tr> -->
-                    <!-- <tr>
-                            <td>
-                                Total Addon Price
-                            </td>
-                            <td>
-                                <?php
-                                // echo '฿' . $totaladdonprice;
-                                ?>
-                            </td>
-                        </tr> -->
                 </tbody>
                 </table>
             <?php
@@ -278,69 +231,22 @@
                     <td>';
                 echo $canbecancel[$i];
                 echo '</td>';
-                //addon
-                // $bed = array();
-                // $breakfast = array();
-                // $checkbed = 'bed' . $i;
-                // $checkbreakfast = 'breakfast' . $i;
-                // $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-                // $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-                // if ($temp3 == "")
-                //     $bed[$i] = 0;
-                // else
-                //     $bed[$i] = $temp3;
-                // if ($temp4 == "")
-                //     $breakfast[$i] = 0;
-                // else
-                //     $breakfast[$i] = $temp4;
-
-                // echo '  </tr><tr><td>Addon</td><td>';
-
-                // if ($addbed[$i] == 1)
-                //     echo 'Extra Bed (+฿700)<br>';
-                // if ($foodservice[$i] == 1)
-                //     echo 'Breakfast (+฿100/person) x ' . $amountguest[$i] . ' person</td></tr>';
-
 
                 echo '</tbody></table>';
             } ?>
         </form>
         <?php
-        echo '<a class="btn btn-info" href="/formcheckin1.php" role="button">Back</a>';
+            echo'<a class="btn btn-primary" href="formcheckin1.php" role="button">Back</a>';
         ?>
-
-
 
         <script>
             function sendfunction() {
-
                 document.getElementById("sent").innerHTML = "<?php
                                                                 //update guest & keystatus
                                                                 $sql = "UPDATE bookinginfo SET GuestName = '$guestnameinput',KeyStatus = '$keynew' WHERE BookingNo = '$bookingno'";
                                                                 if (!mysqli_query($con, $sql)) {
                                                                     echo "ERROR";
                                                                 } else echo "1 record added";
-
-                                                                // for ($i = 0; $i < $lenght; $i++) {
-                                                                //     $bed = array();
-                                                                //     $breakfast = array();
-                                                                //     $checkbed = 'bed' . $i;
-                                                                //     $checkbreakfast = 'breakfast' . $i;
-                                                                //     $temp3 = isset($_GET["$checkbed"]) ? 1 : 0;
-                                                                //     $temp4 = isset($_GET["$checkbreakfast"]) ? 1 : 0;
-                                                                //     if ($temp3 == "")
-                                                                //         $bed[$i] = 0;
-                                                                //     else
-                                                                //         $bed[$i] = $temp3;
-                                                                //     if ($temp4 == "")
-                                                                //         $breakfast[$i] = 0;
-                                                                //     else
-                                                                //         $breakfast[$i] = $temp4;
-                                                                //     $sql = "UPDATE bookingroom SET AdditionBed = '$bed[$i]',FoodService = '$breakfast[$i]' WHERE RoomID = '$roomid[$i]'";
-                                                                //     if (!mysqli_query($con, $sql)) {
-                                                                //         echo "ERROR";
-                                                                //     } else echo "1 record added";
-                                                                // } 
                                                                 ?>";
             }
         </script>

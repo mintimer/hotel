@@ -273,7 +273,7 @@
             }
             echo '<button type="submit" class="btn btn-info">confirm</button>';
             }
-                else echo'<a class="btn btn-primary" href="/formcheckin1.php" role="button">Back</a>';
+                else echo'<a class="btn btn-primary" href="formcheckin1.php" role="button">Back</a>';
             ?>
         </form>
 
