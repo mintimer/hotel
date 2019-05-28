@@ -113,8 +113,8 @@
         </div>
         <br>
         <form action="#" method="GET">
-        <input type="submit" name="submit" class="btn btn-info" value="SUBMIT">
-        <input type="submit" name="submit" class="btn btn-danger" value="CANCEL">
+        <input type="submit" name="submit" class="btn btn-info" onclick="dialogsubmit()" value="SUBMIT">
+        <input type="submit" name="submit" class="btn btn-danger" onclick="dialogcancel()" value="CANCEL">
         </form>
         <?php 
             if(isset($_GET['submit'])){
@@ -122,13 +122,14 @@
                         if($_SESSION['role']=='member'){
                             $sql3="UPDATE bookinginfo
                                    SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = '".$_SESSION['disc']."', TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
-                                   WHERE BookingNo = '".$_SESSION['bno']."';
-                                   
-                                   UPDATE memberinfo
-                                   SET Point = ".$getpoint." + Point - ".$_SESSION['upoint']."
+                                   WHERE BookingNo = '".$_SESSION['bno']."'";
+                            // $newpoint = $getpoint - $_SESSION['upont'];
+                            $sql32="UPDATE memberinfo 
+                                   SET Point = Point + ".$newpoint."
                                    WHERE userID = '".$_SESSION['uid']."'";
                             
                             mysqli_query($con,$sql3) or die("Error: " . mysqli_error($con));
+                            mysqli_query($con,$sql32) or die("Error: " . mysqli_error($con));
                             header("Location: welcome.php");
                         }else {
                             $sql3="UPDATE bookinginfo
@@ -153,6 +154,24 @@
         </div>
         <br>
         </div>
-<br>
+        <br>
+        <script>
+                    function dialogsubmit() {
+                        Swal.fire({
+                            position: 'top',
+                            type: 'success',
+                            title: 'Your booking has been success',
+                            showConfirmButton: true
+                        })
+                    }
+                    function dialogcancel() {
+                        Swal.fire({
+                            position: 'top',
+                            type: 'error',
+                            title: 'Your booking has been cancel',
+                            showConfirmButton: true
+                        })
+                    }
+        </script>
     </body>
 </html>

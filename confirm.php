@@ -98,6 +98,7 @@
             if(isset($row['Point'])&&isset($_GET['upoint'])){
                 if($_GET['upoint']>$row['Point']){
                     echo "More than u have";
+                    $_SESSION['upoint']=0;
                     
                 }else {
                     $_SESSION['upoint']=$_GET['upoint'];
