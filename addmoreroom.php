@@ -186,9 +186,16 @@
                         })
                     }
                 </script>
-                <button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">Submit</button>
                 </form>
-                <br>
+                <form>
+                    
+                    <?php 
+                    if(isset($_POST['add'])){
+                        echo '<button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">Submit</button>';
+                        }
+                    ?>
+                    <br>
+                </form>
         </div>
         <br>
     </div>

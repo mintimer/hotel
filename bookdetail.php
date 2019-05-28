@@ -106,7 +106,7 @@
                         echo $balance;
                  ?><br>
         Get point: <?php 
-                        $getpoint = floor($balance/100);
+                        $_SESSION['role']=='member'? $getpoint = floor($balance/100):$getpoint = 0 ;
                         echo $getpoint;
                  ?><br>
                  <br>
@@ -119,7 +119,7 @@
         <?php 
             if(isset($_GET['submit'])){
                 if($_GET['submit']=="SUBMIT"){
-                        echo "submit reabroi";
+                
                         $sql3="UPDATE bookinginfo
                                SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = '".$_SESSION['disc']."', TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
                                WHERE BookingNo = '".$_SESSION['bno']."';
@@ -131,7 +131,7 @@
                         mysqli_query($con,$sql3) or die("Error: " . mysqli_error($sql));
                         header("Location: welcome.php");
                     }else {
-                        echo "delete reabrot";
+                     
                         $sql4="DELETE FROM bookingroom WHERE BookingNo = '$bno'";
                         $sql5="DELETE FROM bookinginfo WHERE BookingNo = '$bno'";
                         mysqli_query($con,$sql4) or die("Error: " . mysqli_error($sql));
