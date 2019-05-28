@@ -132,8 +132,8 @@
                         header("Location: welcome.php");
                     }else {
                      
-                        $sql4="DELETE FROM bookingroom WHERE BookingNo = '$bno'";
-                        $sql5="DELETE FROM bookinginfo WHERE BookingNo = '$bno'";
+                        $sql4="DELETE FROM bookingroom WHERE BookingNo = $bno";
+                        $sql5="DELETE FROM bookinginfo WHERE BookingNo = $bno";
                         mysqli_query($con,$sql4) or die("Error: " . mysqli_error($sql));
                         mysqli_query($con,$sql5) or die("Error: " . mysqli_error($sql));
                         header("Location: booking_form.php");
