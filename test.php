@@ -10,11 +10,11 @@
        $addbed = isset($_POST['ab'])? 1:0;
        $food = isset($_POST['fd'])? 1:0;
        // echo $_SESSION['aval'];
-       echo "bookno: ".$bno."<br>";
-       echo "brancno: ".$_SESSION['branchno']."<br>";
+//        echo "bookno: ".$bno."<br>";
+//        echo "brancno: ".$_SESSION['branchno']."<br>";
        // echo $addbed;
        // echo $food;
-       echo "rt: ".$_POST['exampleRadios']."<br>";
+//        echo "rt: ".$_POST['exampleRadios']."<br>";
        // echo $_POST['guest'];
                $sql = "SELECT RoomID
                                 FROM roominfo
@@ -35,9 +35,7 @@
                         mysqli_query($con,$sql2) or die("Error: ".mysqli_error($con));
         header("Location: addmoreroom.php");
         ?>
-        <!-- <form action="booking_form.php" method="post" >
-                <input type="hidden" name="">
-        </form> -->
+        
 </body>
 
 </html>

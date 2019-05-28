@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Add more room</title>
+        <title>Confirmation</title>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -96,7 +96,6 @@
                 if($_GET['upoint']>$row['Point']){
                     echo "More than u have";
                 }else {
-                    echo "Goq";
                     $_SESSION['upoint']=$_GET['upoint'];
                 }
             }

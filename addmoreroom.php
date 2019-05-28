@@ -82,7 +82,7 @@
         <h5 style="background-color: powderblue">เลือกห้องพัก</h5>
         <div class="container bg-dark text-white">
             <br>
-            <for method="POST">
+            <form method="POST">
                 <?php
 
                 $sql = 'SELECT * FROM Roomtype';

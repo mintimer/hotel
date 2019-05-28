@@ -111,8 +111,12 @@
                         echo "submit reabroi";
                         $sql3="UPDATE bookinginfo
                                SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = '".$_SESSION['disc']."', TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
-                               WHERE BookingNo = '".$_SESSION['bno']."'";
-                        echo $sql3;
+                               WHERE BookingNo = '".$_SESSION['bno']."';
+                               
+                               UPDATE memberinfo
+                               SET Point = ".$getpoint." + Point - ".$_SESSION['upoint']."
+                               WHERE userID = '".$_SESSION['uid']."'";
+                        
                         mysqli_query($con,$sql3) or die("Error: " . mysqli_error($sql));
                         header("Location: welcome.php");
                     }else {
