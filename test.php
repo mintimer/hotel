@@ -14,7 +14,7 @@
        echo "brancno: ".$_SESSION['branchno']."<br>";
        // echo $addbed;
        // echo $food;
-       echo "rt: ".$_POST['roomtype']."<br>";
+       echo "rt: ".$_POST['exampleRadios']."<br>";
        // echo $_POST['guest'];
                $sql = "SELECT RoomID
                                 FROM roominfo
@@ -24,7 +24,7 @@
                                                                         FROM bookinginfo 
                                                                         WHERE KeyStatus!='2'))
                                                     AND BranchNo =" . "'" . $_SESSION['branchno'] . "'
-                                                    AND RoomType =" . "'" . $_POST['roomtype'] . "'";
+                                                    AND RoomType =" . "'" . $_POST['exampleRadios'] . "'";
                                                     $result = mysqli_query($con, $sql) or die("Error: " . mysqli_error($sql));
                                                     $row = mysqli_fetch_array($result);
                                                     $rid=$row['RoomID'];
