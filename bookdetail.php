@@ -1,6 +1,5 @@
 <html>
 <head>
-        <title>Add more room</title>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -67,8 +66,17 @@
         <div class="container bg-light ">
         <br>
         <h2 class="font-weight-bold text-center"> Booking No: <?php echo $_SESSION['bno']?><br> </h2>
+        <div class="container bg-white">
+            <br>
+        <div class="container bg-warning ">
+            <br>
         Check in date: <?php echo $_SESSION['cidate']?><br>
         Check out date: <?php echo $_SESSION['codate']?><br>
+        <br>
+        </div>
+        <br>
+        <div class="container bg-dark text-white ">
+            <br>
         Total price: <?php 
                         $sql="SELECT SUM(r.RoomPrice)".'*'.$_SESSION['nights']."+(700*SUM(b.AdditionBed))+SUM(b.AmountOfGuest*100*b.FoodService*".$_SESSION['nights'].") AS Sum
                               FROM roominfo r 
@@ -101,9 +109,12 @@
                         $getpoint = floor($balance/100);
                         echo $getpoint;
                  ?><br>
+                 <br>
+        </div>
+        <br>
         <form action="#" method="GET">
-        <input type="submit" name="submit" value="SUBMIT">
-        <input type="submit" name="submit" value="CANCEL">
+        <input type="submit" name="submit" class="btn btn-info" value="SUBMIT">
+        <input type="submit" name="submit" class="btn btn-danger" value="CANCEL">
         </form>
         <?php 
             if(isset($_GET['submit'])){
@@ -130,6 +141,10 @@
             }
             mysqli_close($con);
         ?>
-
+        <br>
+        </div>
+        <br>
+        </div>
+<br>
     </body>
 </html>
