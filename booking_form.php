@@ -198,7 +198,7 @@
                             $gid = "'".$max."'";
                         }
                         $sql="INSERT INTO bookinginfo VALUES('" .$bno. "','" .$_POST['cidate']. "','" .$_POST['codate']. "','" .$role. "',".$gid.",".$uid.",NULL," .$code. ",'0','0','0',NULL,NULL,'0');";
-                        mysqli_query($con,$sql) or die(mysqli_error($con));
+                        mysqli_query($con,$sql);
                         
                     }
                     if($success==1){
