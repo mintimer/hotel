@@ -76,7 +76,10 @@
                 <?php
                         if($_SESSION['role']=='member'){
                             for($i=1;$i<=20;$i++)
-                            echo "<option value='$i'>$i</option>";
+                            if($i==$_GET['upoint']){
+                                echo "<option selected value='".$_SESSION['upoint']."'>".$_SESSION['upoint']."</option>";
+
+                            }else echo "<option value='$i'>$i</option>";
                             
                             $sql="SELECT Point
                                   FROM memberinfo
@@ -95,17 +98,16 @@
             if(isset($row['Point'])&&isset($_GET['upoint'])){
                 if($_GET['upoint']>$row['Point']){
                     echo "More than u have";
+                    
                 }else {
                     $_SESSION['upoint']=$_GET['upoint'];
+                    echo '<br><div class="col-12 text-center" >
+                        <a class="btn btn-outline-info" href="bookdetail.php" role="button">Use point</a>
+                        </div>';
                 }
             }
-        ?>
+        ?>             
         <br>
-        <div class="col-12 text-center" >
-        <a class="btn btn-outline-info" href="bookdetail.php" role="button">Use point</a>
-                    </div>
-                  <br>  
         </div>
-       
     </body>
 </html>
