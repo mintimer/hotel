@@ -83,7 +83,7 @@
                         if($_SESSION['role']=='member'){
                             for($i=1;$i<=20;$i++)
                             if($i==$_GET['upoint']){
-                                echo "<option selected value='".$_SESSION['upoint']."'>".$_SESSION['upoint']."</option>";
+                                echo "<option selected value='".$_GET['upoint']."'>".$_GET['upoint']."</option>";
 
                             }else echo "<option value='$i'>$i</option>";
                             
@@ -92,7 +92,11 @@
                                   WHERE Username='".$_SESSION['uid']."'";
                             $result=mysqli_query($con,$sql) or die(mysqli_error($con));
                             $row=mysqli_fetch_array($result);    
-                        }else $row['Point']=0;
+                        }else {
+                            $row['Point']=0;
+                            $_SESSION['upoint']=0;
+                            header("Location: bookdetail.php");
+                        }
                 ?>
             </select>
             <br>

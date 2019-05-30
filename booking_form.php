@@ -95,7 +95,7 @@
         </div>
         <br>
 
-        <div class="container bg-white">
+        <div class="container bg-dark text-white">
             <br>
             <form id="form1" action="#" method="post">
                 <label for="validationHotel">Select Hotel</label>
@@ -216,7 +216,7 @@
                     }
                     ?>
 
-                    
+                   <br> 
             </div>
             <br>
         </div>

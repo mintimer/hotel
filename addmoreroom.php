@@ -102,8 +102,19 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios0" value="<?php echo $roomtype[0]['RoomType']; ?>" checked>
                                 <label class="form-check-label" for="exampleRadios0">
-                                    <?php echo $roomtype[0]['RoomType']; ?>
-                                    <br>
+                                    <?php 
+                                         $sql="SELECT * FROM roomtype WHERE RoomType = "."'".$roomtype[0]['RoomType']."'";
+                                         $result = mysqli_query($con,$sql) or die (mysqli_error($con));
+                                         $row=mysqli_fetch_array($result);
+                                    ?>
+                                    <b>Roomtype: </b><?php echo $row['RoomType']?><br>
+                                    <b>Room describe: </b><?php echo $row['RoomDescribe']; ?><br>
+                                    <b>Bed detail: </b><?php echo $row['BedDetail']; ?><br>
+                                    <b>Amount of toilet: </b><?php echo $row['AmountOfToilet']; ?><br>
+                                    <b>Area: </b><?php echo $row['Area']; ?><br>
+                                    <b>Maximum guest: </b><?php echo $row['MaximumGuest']; ?><br>
+                                    <b>Rating: </b><?php echo $row['Rating']; ?><br>
+                                    
                                     <img src="<?php echo $roomtype[0]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
                                 </label>
                             </div>
@@ -112,8 +123,19 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="<?php echo $roomtype[1]['RoomType']; ?>">
                                 <label class="form-check-label" for="exampleRadios1">
-                                    <?php echo $roomtype[1]['RoomType']; ?>
-                                    <br>
+                                    <?php 
+                                         $sql="SELECT * FROM roomtype WHERE RoomType = "."'".$roomtype[1]['RoomType']."'";
+                                         $result = mysqli_query($con,$sql) or die (mysqli_error($con));
+                                         $row=mysqli_fetch_array($result);
+                                    ?>
+                                    <b>Roomtype: </b><?php echo $row['RoomType']; ?><br>
+                                    <b>Room describe: </b><?php echo $row['RoomDescribe']; ?><br>
+                                    <b>Bed detail: </b><?php echo $row['BedDetail']; ?><br>
+                                    <b>Amount of toilet: </b><?php echo $row['AmountOfToilet']; ?><br>
+                                    <b>Area: </b><?php echo $row['Area']; ?><br>
+                                    <b>Maximum guest: </b><?php echo $row['MaximumGuest']; ?><br>
+                                    <b>Rating: </b><?php echo $row['Rating']; ?><br>
+                                    
                                     <img src="<?php echo $roomtype[1]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
                                 </label>
                             </div>
@@ -125,8 +147,19 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="<?php echo $roomtype[2]['RoomType']; ?>">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    <?php echo $roomtype[2]['RoomType']; ?>
-                                    <br>
+                                    <?php 
+                                         $sql="SELECT * FROM roomtype WHERE RoomType = "."'".$roomtype[2]['RoomType']."'";
+                                         $result = mysqli_query($con,$sql) or die (mysqli_error($con));
+                                         $row=mysqli_fetch_array($result);
+                                    ?>
+                                    <b>Roomtype: </b><?php echo $row['RoomType']; ?><br>
+                                    <b>Room describe: </b><?php echo $row['RoomDescribe']; ?><br>
+                                    <b>Bed detail: </b><?php echo $row['BedDetail']; ?><br>
+                                    <b>Amount of toilet: </b><?php echo $row['AmountOfToilet']; ?><br>
+                                    <b>Area: </b><?php echo $row['Area']; ?><br>
+                                    <b>Maximum guest: </b><?php echo $row['MaximumGuest']; ?><br>
+                                    <b>Rating: </b><?php echo $row['Rating']; ?><br>
+
                                     <img src="<?php echo $roomtype[2]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
                                 </label>
                             </div>
@@ -135,8 +168,18 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="<?php echo $roomtype[3]['RoomType']; ?>">
                                 <label class="form-check-label" for="exampleRadios3">
-                                    <?php echo $roomtype[3]['RoomType']; ?>
-                                    <br>
+                                     <?php 
+                                         $sql="SELECT * FROM roomtype WHERE RoomType = "."'".$roomtype[3]['RoomType']."'";
+                                         $result = mysqli_query($con,$sql) or die (mysqli_error($con));
+                                         $row=mysqli_fetch_array($result);
+                                    ?>
+                                    <b>Roomtype: </b><?php echo $row['RoomType']; ?><br>
+                                    <b>Room describe: </b><?php echo $row['RoomDescribe']; ?><br>
+                                    <b>Bed detail: </b><?php echo $row['BedDetail']; ?><br>
+                                    <b>Amount of toilet: </b><?php echo $row['AmountOfToilet']; ?><br>
+                                    <b>Area: </b><?php echo $row['Area']; ?><br>
+                                    <b>Maximum guest: </b><?php echo $row['MaximumGuest']; ?><br>
+                                    <b>Rating: </b><?php echo $row['Rating']; ?><br>
                                     <img src="<?php echo $roomtype[3]['ExPicture']; ?>" alt="img0" class="img-fluid img-thumbnail" height="400" width="400">
                                 </label>
                             </div>
