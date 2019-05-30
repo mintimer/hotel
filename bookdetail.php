@@ -118,7 +118,7 @@
         </div>
         <br>
         <form action="#" method="GET">
-        <input type="submit" name="submit" class="btn btn-info" onclick="dialogsubmit()" value="SUBMIT">
+        <input type="submit" name="submit" class="btn btn-info" onclick="dialogsubmit()" value="CONFIRM">
         <input type="submit" name="submit" class="btn btn-danger" onclick="dialogcancel()" value="CANCEL">
         </form>
         <?php 
