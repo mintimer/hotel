@@ -129,7 +129,7 @@
         </form>
         <?php 
             if(isset($_GET['submit'])){
-                if($_GET['submit']=="SUBMIT"){
+                if($_GET['submit']=="CONFIRM"){
                         if($_SESSION['role']=='member'){
                             $sql3="UPDATE bookinginfo
                                    SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = ".$disc.", TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
