@@ -124,6 +124,7 @@
             </table>
             <br>
         </div>
+        <br>
     </body>
     <?php mysqli_close($con);?>
 </html>
