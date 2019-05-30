@@ -75,7 +75,7 @@
                 $sql = "SELECT Point FROM memberinfo WHERE username = '".$_SESSION['uid']."'";
                 $result = mysqli_query($con,$sql);
                 $row = mysqli_fetch_array($result);
-                echo "You have ".$row['Point']." points."
+                echo "You have ".$row['Point']." points.";
                 }?>
             <select name="upoint" class="form-control">
                 <option value="0">0</option>
