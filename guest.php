@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link disable" href="#" style="color: #eceaea">BOOKING</a>
+                    <a class="nav-link disable" style="color: #eceaea">BOOKING</a>
                 </li>
 
                 <li class="nav-item">

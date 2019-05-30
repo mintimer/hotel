@@ -232,7 +232,7 @@
                     <?php 
                     if(isset($_SESSION['added'])){
                         if($_SESSION['added']==1){
-                            echo '<button formaction="confirm.php" class="btn btn-success" name="submit" type="submit" value="submit">SUBMIT</button>';
+                            echo '<button formaction="usepoint.php" class="btn btn-success" name="submit" type="submit" value="submit">SUBMIT</button>';
                             }
                         }
                     ?>
