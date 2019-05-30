@@ -91,11 +91,16 @@
                      ?><br>
         Using point: <?php echo $_SESSION['upoint']?><br>
         Discount percent: <?php 
-                                if(strlen($_SESSION['disc'])==NULL || $_SESSION['disc']=='NULL'){
-                                    $_SESSION['disc']="NULL";
-                                    echo $_SESSION['disc'];
-                                }else $_SESSION['disc']="'".$_SESSION['disc']."'";
-                                $sql2="SELECT DiscountPercent FROM discountinfo WHERE DiscountCode = ".$_SESSION['disc']."";
+                                $sql = "SELECT DiscountCode FROM bookinginfo where bookingno = ".$_SESSION['bno'];
+                                $result=mysqli_query($con,$sql) or die(mysqli_error($con));
+                                $row=mysqli_fetch_array($result);
+                                $disc = $row['DiscountCode'];
+                                if(strlen($disc)==NULL){
+                                    $disc="NULL";
+                                    echo $disc;
+                                }else
+                                    $disc="'".$disc."'";
+                                $sql2="SELECT DiscountPercent FROM discountinfo WHERE DiscountCode = ".$disc."";
                                 $result2=mysqli_query($con,$sql2) or die(mysqli_error($con));
                                 $row2=mysqli_fetch_array($result2);
                                 $discountpercent=$row2['DiscountPercent'];
@@ -126,7 +131,7 @@
                 if($_GET['submit']=="SUBMIT"){
                         if($_SESSION['role']=='member'){
                             $sql3="UPDATE bookinginfo
-                                   SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = ".$_SESSION['disc'].", TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
+                                   SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = ".$disc.", TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
                                    WHERE BookingNo = '".$_SESSION['bno']."'";
                             $sql32="UPDATE memberinfo 
                                    SET "."point"." = "."point"." + ".$newpoint."
@@ -135,7 +140,7 @@
                             mysqli_query($con,$sql32) or die("Error: " . mysqli_error($con));
                         }else {
                             $sql3="UPDATE bookinginfo
-                                   SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = ".$_SESSION['disc'].", TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
+                                   SET UsingPoint = ".$_SESSION['upoint'].", DiscountCode = ".$disc.", TotalPrice = $totalprice, TotalDiscount = $totaldiscount, Balance = $balance, GetPoint = $getpoint
                                    WHERE BookingNo = '".$_SESSION['bno']."'";
                             
                             mysqli_query($con,$sql3) or die("Error: " . mysqli_error($con));
