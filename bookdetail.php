@@ -94,6 +94,7 @@
                                 $sql = "SELECT DiscountCode FROM bookinginfo where bookingno = ".$_SESSION['bno'];
                                 $result=mysqli_query($con,$sql) or die(mysqli_error($con));
                                 $row=mysqli_fetch_array($result);
+                                
                                 $disc = $row['DiscountCode'];
                                 if(strlen($disc)==NULL){
                                     $disc="NULL";
